@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAAD217E36E7003F4BDE /* AppDelegate.swift */; };
+		3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAAF217E36E7003F4BDE /* ViewController.swift */; };
+		3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB1217E36E7003F4BDE /* Main.storyboard */; };
+		3240CAB5217E36E9003F4BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB4217E36E9003F4BDE /* Assets.xcassets */; };
+		3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */; };
+		3240CAC3217E36E9003F4BDE /* Borken_PlaygroundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */; };
+		3240CACE217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3240CABF217E36E9003F4BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3240CAA2217E36E7003F4BDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3240CAA9217E36E7003F4BDE;
+			remoteInfo = "Borken Playgrounds";
+		};
+		3240CACA217E36E9003F4BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3240CAA2217E36E7003F4BDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3240CAA9217E36E7003F4BDE;
+			remoteInfo = "Borken Playgrounds";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Borken Playgrounds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3240CAAD217E36E7003F4BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3240CAAF217E36E7003F4BDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3240CAB2217E36E7003F4BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3240CAB4217E36E9003F4BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3240CAB7217E36E9003F4BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3240CAB9217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borken PlaygroundsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borken_PlaygroundsTests.swift; sourceTree = "<group>"; };
+		3240CAC4217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borken PlaygroundsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borken_PlaygroundsUITests.swift; sourceTree = "<group>"; };
+		3240CACF217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3240CAA7217E36E7003F4BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CABB217E36E9003F4BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CAC6217E36E9003F4BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3240CAA1217E36E7003F4BDE = {
+			isa = PBXGroup;
+			children = (
+				3240CAAC217E36E7003F4BDE /* Borken Playgrounds */,
+				3240CAC1217E36E9003F4BDE /* Borken PlaygroundsTests */,
+				3240CACC217E36E9003F4BDE /* Borken PlaygroundsUITests */,
+				3240CAAB217E36E7003F4BDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3240CAAB217E36E7003F4BDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */,
+				3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */,
+				3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3240CAAC217E36E7003F4BDE /* Borken Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				3240CAAD217E36E7003F4BDE /* AppDelegate.swift */,
+				3240CAAF217E36E7003F4BDE /* ViewController.swift */,
+				3240CAB1217E36E7003F4BDE /* Main.storyboard */,
+				3240CAB4217E36E9003F4BDE /* Assets.xcassets */,
+				3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */,
+				3240CAB9217E36E9003F4BDE /* Info.plist */,
+			);
+			path = "Borken Playgrounds";
+			sourceTree = "<group>";
+		};
+		3240CAC1217E36E9003F4BDE /* Borken PlaygroundsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */,
+				3240CAC4217E36E9003F4BDE /* Info.plist */,
+			);
+			path = "Borken PlaygroundsTests";
+			sourceTree = "<group>";
+		};
+		3240CACC217E36E9003F4BDE /* Borken PlaygroundsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */,
+				3240CACF217E36E9003F4BDE /* Info.plist */,
+			);
+			path = "Borken PlaygroundsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3240CAA9217E36E7003F4BDE /* Borken Playgrounds */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3240CAD2217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken Playgrounds" */;
+			buildPhases = (
+				3240CAA6217E36E7003F4BDE /* Sources */,
+				3240CAA7217E36E7003F4BDE /* Frameworks */,
+				3240CAA8217E36E7003F4BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Borken Playgrounds";
+			productName = "Borken Playgrounds";
+			productReference = 3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3240CABD217E36E9003F4BDE /* Borken PlaygroundsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3240CAD5217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsTests" */;
+			buildPhases = (
+				3240CABA217E36E9003F4BDE /* Sources */,
+				3240CABB217E36E9003F4BDE /* Frameworks */,
+				3240CABC217E36E9003F4BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3240CAC0217E36E9003F4BDE /* PBXTargetDependency */,
+			);
+			name = "Borken PlaygroundsTests";
+			productName = "Borken PlaygroundsTests";
+			productReference = 3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3240CAC8217E36E9003F4BDE /* Borken PlaygroundsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3240CAD8217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsUITests" */;
+			buildPhases = (
+				3240CAC5217E36E9003F4BDE /* Sources */,
+				3240CAC6217E36E9003F4BDE /* Frameworks */,
+				3240CAC7217E36E9003F4BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3240CACB217E36E9003F4BDE /* PBXTargetDependency */,
+			);
+			name = "Borken PlaygroundsUITests";
+			productName = "Borken PlaygroundsUITests";
+			productReference = 3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3240CAA2217E36E7003F4BDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Jugendwerk Borken";
+				TargetAttributes = {
+					3240CAA9217E36E7003F4BDE = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					3240CABD217E36E9003F4BDE = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 3240CAA9217E36E7003F4BDE;
+					};
+					3240CAC8217E36E9003F4BDE = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 3240CAA9217E36E7003F4BDE;
+					};
+				};
+			};
+			buildConfigurationList = 3240CAA5217E36E7003F4BDE /* Build configuration list for PBXProject "Borken Playgrounds" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3240CAA1217E36E7003F4BDE;
+			productRefGroup = 3240CAAB217E36E7003F4BDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3240CAA9217E36E7003F4BDE /* Borken Playgrounds */,
+				3240CABD217E36E9003F4BDE /* Borken PlaygroundsTests */,
+				3240CAC8217E36E9003F4BDE /* Borken PlaygroundsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3240CAA8217E36E7003F4BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */,
+				3240CAB5217E36E9003F4BDE /* Assets.xcassets in Resources */,
+				3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CABC217E36E9003F4BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CAC7217E36E9003F4BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3240CAA6217E36E7003F4BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
+				3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CABA217E36E9003F4BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3240CAC3217E36E9003F4BDE /* Borken_PlaygroundsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240CAC5217E36E9003F4BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3240CACE217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3240CAC0217E36E9003F4BDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3240CAA9217E36E7003F4BDE /* Borken Playgrounds */;
+			targetProxy = 3240CABF217E36E9003F4BDE /* PBXContainerItemProxy */;
+		};
+		3240CACB217E36E9003F4BDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3240CAA9217E36E7003F4BDE /* Borken Playgrounds */;
+			targetProxy = 3240CACA217E36E9003F4BDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3240CAB1217E36E7003F4BDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3240CAB2217E36E7003F4BDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3240CAB7217E36E9003F4BDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3240CAD0217E36E9003F4BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3240CAD1217E36E9003F4BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3240CAD3217E36E9003F4BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken Playgrounds/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-Playgrounds";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3240CAD4217E36E9003F4BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken Playgrounds/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-Playgrounds";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3240CAD6217E36E9003F4BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken PlaygroundsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Borken Playgrounds.app/Borken Playgrounds";
+			};
+			name = Debug;
+		};
+		3240CAD7217E36E9003F4BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken PlaygroundsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Borken Playgrounds.app/Borken Playgrounds";
+			};
+			name = Release;
+		};
+		3240CAD9217E36E9003F4BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken PlaygroundsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Borken Playgrounds";
+			};
+			name = Debug;
+		};
+		3240CADA217E36E9003F4BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FK43QMRU3M;
+				INFOPLIST_FILE = "Borken PlaygroundsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Borken Playgrounds";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3240CAA5217E36E7003F4BDE /* Build configuration list for PBXProject "Borken Playgrounds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3240CAD0217E36E9003F4BDE /* Debug */,
+				3240CAD1217E36E9003F4BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3240CAD2217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken Playgrounds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3240CAD3217E36E9003F4BDE /* Debug */,
+				3240CAD4217E36E9003F4BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3240CAD5217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3240CAD6217E36E9003F4BDE /* Debug */,
+				3240CAD7217E36E9003F4BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3240CAD8217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3240CAD9217E36E9003F4BDE /* Debug */,
+				3240CADA217E36E9003F4BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3240CAA2217E36E7003F4BDE /* Project object */;
+}
