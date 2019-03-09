@@ -1,0 +1,7 @@
+*.xcworkspace
+*.xcodeproj
+x.xcodeproj/**
+Borken Playground.xcodeproj
+xcuserdata
+Pods
+GoogleService-Info.plist

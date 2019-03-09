@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32093771222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32093770222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift */; };
+		3220FB3821B2723800294B3F /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220FB3721B2723800294B3F /* Playground.swift */; };
+		3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220FB3A21B272CD00294B3F /* PlaygroundAnnotation.swift */; };
+		3220FB3E21B2795500294B3F /* CustomImageAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220FB3D21B2795500294B3F /* CustomImageAnnotationView.swift */; };
+		3220FB4021B27D4400294B3F /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220FB3F21B27D4400294B3F /* PlaygroundViewController.swift */; };
+		322924BE21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322924BD21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift */; };
+		322924C121B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322924C021B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift */; };
+		322924C321B2D2D800F3ECDB /* PlaygroundElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322924C221B2D2D800F3ECDB /* PlaygroundElement.swift */; };
+		322924C521B2DBB600F3ECDB /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322924C421B2DBB600F3ECDB /* ColumnFlowLayout.swift */; };
 		3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAAD217E36E7003F4BDE /* AppDelegate.swift */; };
 		3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAAF217E36E7003F4BDE /* ViewController.swift */; };
 		3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB1217E36E7003F4BDE /* Main.storyboard */; };
@@ -14,6 +23,14 @@
 		3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */; };
 		3240CAC3217E36E9003F4BDE /* Borken_PlaygroundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */; };
 		3240CACE217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */; };
+		3260345A223402ED009D75A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32603459223402ED009D75A4 /* User.swift */; };
+		3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345B2234244E009D75A4 /* AvatarAnnotation.swift */; };
+		3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */; };
+		327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 327C98A321BAB85000F19F2C /* Kidsn.ttf */; };
+		32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */; };
+		551566F374467C0FF933B7DD /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574018664D50E988E8EFDCF8 /* Pods_Borken_PlaygroundsUITests.framework */; };
+		B6B8BA1B027299EEAC3CE245 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92F2AB2887953A666C70297 /* Pods_Borken_PlaygroundsTests.framework */; };
+		F8C5632CA255C5D235147C0D /* Pods_Borken_Playgrounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21C59138E992DF02B071B4B /* Pods_Borken_Playgrounds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32093770222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePlaygroundElementViewCell.swift; sourceTree = "<group>"; };
+		3220FB3721B2723800294B3F /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
+		3220FB3A21B272CD00294B3F /* PlaygroundAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundAnnotation.swift; sourceTree = "<group>"; };
+		3220FB3D21B2795500294B3F /* CustomImageAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageAnnotationView.swift; sourceTree = "<group>"; };
+		3220FB3F21B27D4400294B3F /* PlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
+		322924BD21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundElementViewController.swift; sourceTree = "<group>"; };
+		322924C021B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundElementViewCell.swift; sourceTree = "<group>"; };
+		322924C221B2D2D800F3ECDB /* PlaygroundElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundElement.swift; sourceTree = "<group>"; };
+		322924C421B2DBB600F3ECDB /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Borken Playgrounds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3240CAAD217E36E7003F4BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3240CAAF217E36E7003F4BDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +73,20 @@
 		3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borken PlaygroundsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borken_PlaygroundsUITests.swift; sourceTree = "<group>"; };
 		3240CACF217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32603459223402ED009D75A4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3260345B2234244E009D75A4 /* AvatarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnnotation.swift; sourceTree = "<group>"; };
+		3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarAnnotationView.swift; sourceTree = "<group>"; };
+		327C98A321BAB85000F19F2C /* Kidsn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kidsn.ttf; sourceTree = "<group>"; };
+		32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA623A4AA1A0484E7192B89 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsUITests/Pods-Borken PlaygroundsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C2CED1DBE7DC78AEE467374 /* Pods-Borken Playgrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken Playgrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds.release.xcconfig"; sourceTree = "<group>"; };
+		574018664D50E988E8EFDCF8 /* Pods_Borken_PlaygroundsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_PlaygroundsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5035227F7BF33653A3989F /* Pods-Borken PlaygroundsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsTests/Pods-Borken PlaygroundsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A21C59138E992DF02B071B4B /* Pods_Borken_Playgrounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_Playgrounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92F2AB2887953A666C70297 /* Pods_Borken_PlaygroundsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_PlaygroundsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0DDA573B27C52F31917CBD2 /* Pods-Borken PlaygroundsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsUITests/Pods-Borken PlaygroundsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9D38EE033A8B5B0C2935A89 /* Pods-Borken PlaygroundsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsTests/Pods-Borken PlaygroundsTests.release.xcconfig"; sourceTree = "<group>"; };
+		EFBFA8B752855947A449B546 /* Pods-Borken Playgrounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken Playgrounds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C5632CA255C5D235147C0D /* Pods_Borken_Playgrounds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B8BA1B027299EEAC3CE245 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +110,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551566F374467C0FF933B7DD /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31335089298F35A98C06A672 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFA8B752855947A449B546 /* Pods-Borken Playgrounds.debug.xcconfig */,
+				4C2CED1DBE7DC78AEE467374 /* Pods-Borken Playgrounds.release.xcconfig */,
+				6C5035227F7BF33653A3989F /* Pods-Borken PlaygroundsTests.debug.xcconfig */,
+				B9D38EE033A8B5B0C2935A89 /* Pods-Borken PlaygroundsTests.release.xcconfig */,
+				3BA623A4AA1A0484E7192B89 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */,
+				B0DDA573B27C52F31917CBD2 /* Pods-Borken PlaygroundsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3220FB3621B2722300294B3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32603459223402ED009D75A4 /* User.swift */,
+				3220FB3721B2723800294B3F /* Playground.swift */,
+				322924C221B2D2D800F3ECDB /* PlaygroundElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3220FB3921B272BF00294B3F /* Mapbox */ = {
+			isa = PBXGroup;
+			children = (
+				3220FB3A21B272CD00294B3F /* PlaygroundAnnotation.swift */,
+				3260345B2234244E009D75A4 /* AvatarAnnotation.swift */,
+				3220FB3D21B2795500294B3F /* CustomImageAnnotationView.swift */,
+				3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */,
+			);
+			path = Mapbox;
+			sourceTree = "<group>";
+		};
+		3220FB3C21B276EE00294B3F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3240CAAF217E36E7003F4BDE /* ViewController.swift */,
+				3220FB3F21B27D4400294B3F /* PlaygroundViewController.swift */,
+				322924BD21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		322924BF21B2CEFC00F3ECDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32093770222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift */,
+				322924C021B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift */,
+				322924C421B2DBB600F3ECDB /* ColumnFlowLayout.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3240CAA1217E36E7003F4BDE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +178,8 @@
 				3240CAC1217E36E9003F4BDE /* Borken PlaygroundsTests */,
 				3240CACC217E36E9003F4BDE /* Borken PlaygroundsUITests */,
 				3240CAAB217E36E7003F4BDE /* Products */,
+				31335089298F35A98C06A672 /* Pods */,
+				457C4F9B4832264BAC3226D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +196,13 @@
 		3240CAAC217E36E7003F4BDE /* Borken Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				327C98A221BAB84500F19F2C /* fonts */,
+				322924BF21B2CEFC00F3ECDB /* Views */,
+				3220FB3C21B276EE00294B3F /* Controller */,
+				3220FB3921B272BF00294B3F /* Mapbox */,
+				3220FB3621B2722300294B3F /* Models */,
+				32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */,
 				3240CAAD217E36E7003F4BDE /* AppDelegate.swift */,
-				3240CAAF217E36E7003F4BDE /* ViewController.swift */,
 				3240CAB1217E36E7003F4BDE /* Main.storyboard */,
 				3240CAB4217E36E9003F4BDE /* Assets.xcassets */,
 				3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */,
@@ -125,6 +229,24 @@
 			path = "Borken PlaygroundsUITests";
 			sourceTree = "<group>";
 		};
+		327C98A221BAB84500F19F2C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				327C98A321BAB85000F19F2C /* Kidsn.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		457C4F9B4832264BAC3226D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A21C59138E992DF02B071B4B /* Pods_Borken_Playgrounds.framework */,
+				A92F2AB2887953A666C70297 /* Pods_Borken_PlaygroundsTests.framework */,
+				574018664D50E988E8EFDCF8 /* Pods_Borken_PlaygroundsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3240CAD2217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken Playgrounds" */;
 			buildPhases = (
+				81D09D7EDC6DFA081D037025 /* [CP] Check Pods Manifest.lock */,
 				3240CAA6217E36E7003F4BDE /* Sources */,
 				3240CAA7217E36E7003F4BDE /* Frameworks */,
 				3240CAA8217E36E7003F4BDE /* Resources */,
+				482DD711926B3259F7324E8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3240CAD5217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsTests" */;
 			buildPhases = (
+				A152481AC53D7329DF22CF47 /* [CP] Check Pods Manifest.lock */,
 				3240CABA217E36E9003F4BDE /* Sources */,
 				3240CABB217E36E9003F4BDE /* Frameworks */,
 				3240CABC217E36E9003F4BDE /* Resources */,
@@ -167,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3240CAD8217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsUITests" */;
 			buildPhases = (
+				5E4F9F39156CCF53150D2A4E /* [CP] Check Pods Manifest.lock */,
 				3240CAC5217E36E9003F4BDE /* Sources */,
 				3240CAC6217E36E9003F4BDE /* Frameworks */,
 				3240CAC7217E36E9003F4BDE /* Resources */,
@@ -193,6 +319,11 @@
 				TargetAttributes = {
 					3240CAA9217E36E7003F4BDE = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					3240CABD217E36E9003F4BDE = {
 						CreatedOnToolsVersion = 10.0;
@@ -230,7 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */,
+				32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */,
 				3240CAB5217E36E9003F4BDE /* Assets.xcassets in Resources */,
+				327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */,
 				3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +384,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		482DD711926B3259F7324E8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SparrowKit/SparrowKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparrowKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E4F9F39156CCF53150D2A4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Borken PlaygroundsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81D09D7EDC6DFA081D037025 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Borken Playgrounds-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A152481AC53D7329DF22CF47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Borken PlaygroundsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3240CAA6217E36E7003F4BDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3260345A223402ED009D75A4 /* User.swift in Sources */,
+				322924C321B2D2D800F3ECDB /* PlaygroundElement.swift in Sources */,
 				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
+				3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */,
 				3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */,
+				3220FB3E21B2795500294B3F /* CustomImageAnnotationView.swift in Sources */,
+				322924C121B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift in Sources */,
+				3220FB3821B2723800294B3F /* Playground.swift in Sources */,
+				322924C521B2DBB600F3ECDB /* ColumnFlowLayout.swift in Sources */,
+				32093771222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift in Sources */,
+				322924BE21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift in Sources */,
+				3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */,
+				3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */,
+				3220FB4021B27D4400294B3F /* PlaygroundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -418,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -430,11 +682,13 @@
 		};
 		3240CAD3217E36E9003F4BDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFBFA8B752855947A449B546 /* Pods-Borken Playgrounds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FK43QMRU3M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Borken Playgrounds/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +702,13 @@
 		};
 		3240CAD4217E36E9003F4BDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C2CED1DBE7DC78AEE467374 /* Pods-Borken Playgrounds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FK43QMRU3M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Borken Playgrounds/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +722,7 @@
 		};
 		3240CAD6217E36E9003F4BDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C5035227F7BF33653A3989F /* Pods-Borken PlaygroundsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +744,7 @@
 		};
 		3240CAD7217E36E9003F4BDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D38EE033A8B5B0C2935A89 /* Pods-Borken PlaygroundsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +766,7 @@
 		};
 		3240CAD9217E36E9003F4BDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA623A4AA1A0484E7192B89 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +787,7 @@
 		};
 		3240CADA217E36E9003F4BDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0DDA573B27C52F31917CBD2 /* Pods-Borken PlaygroundsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

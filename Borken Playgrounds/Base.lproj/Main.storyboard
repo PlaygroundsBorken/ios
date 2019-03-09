@@ -1,24 +1,288 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2uN-V6-7jE">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kidsn.ttf">
+            <string>KidsPlain</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="gEx-ix-KAJ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController id="2uN-V6-7jE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YH0-vG-sUy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ox5-bg-7NY" kind="relationship" relationship="rootViewController" id="0kP-I7-ts0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Voj-SW-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1471" y="-325"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="r8u-Iu-DHK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ox5-bg-7NY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hKs-cp-S1K"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CrA-fb-t86">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="IWz-LV-T7f" kind="relationship" relationship="viewControllers" id="Nak-Rv-81U"/>
+                        <segue destination="Nsr-hw-5Lk" kind="relationship" relationship="viewControllers" id="xIG-XO-jmq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4W-cc-s9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.380434782608699"/>
+        </scene>
+        <!--PlaygroundElements-->
+        <scene sceneID="B3R-Ih-RtQ">
+            <objects>
+                <collectionViewController id="Nsr-hw-5Lk" userLabel="PlaygroundElements" customClass="PlaygroundElementViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vc9-yD-n0M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a10-2b-Cg9">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playgroundElementViewCell" id="CU8-f4-m44" customClass="PlaygroundElementViewCell" customModule="Borken_Playgrounds" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP8-x0-qZa">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eP8-x0-qZa" secondAttribute="bottom" id="66U-si-k8j"/>
+                                    <constraint firstItem="eP8-x0-qZa" firstAttribute="top" secondItem="CU8-f4-m44" secondAttribute="top" id="S7u-kr-wLd"/>
+                                    <constraint firstItem="eP8-x0-qZa" firstAttribute="leading" secondItem="CU8-f4-m44" secondAttribute="leading" id="jPl-Y5-i5D"/>
+                                    <constraint firstAttribute="trailing" secondItem="eP8-x0-qZa" secondAttribute="trailing" id="scf-Ta-2eD"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="playgroundElementImageView" destination="eP8-x0-qZa" id="6Sv-kK-fAT"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Nsr-hw-5Lk" id="tuQ-rI-UcX"/>
+                            <outlet property="delegate" destination="Nsr-hw-5Lk" id="OjR-lX-ap6"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="" image="Filter" id="O1h-CX-Pz9">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Spielgeräte" id="leO-kj-LOB">
+                        <barButtonItem key="backBarButtonItem" title="Übernehmen" id="DhA-sR-m6H"/>
+                        <barButtonItem key="rightBarButtonItem" title="Übernehmen" id="D7Y-Kx-eF9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playgroundElementCollectionView" destination="vc9-yD-n0M" id="Qfy-iK-ulG"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfI-Dy-HFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515.9420289855075" y="-784.23913043478262"/>
+        </scene>
+        <!--Mapbox-->
+        <scene sceneID="OLF-rk-ihu">
+            <objects>
+                <viewController storyboardIdentifier="Mapbox" id="IWz-LV-T7f" userLabel="Mapbox" customClass="MapboxViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CH0-na-u68">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wF0-wS-K0w" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ty8-CJ-mov" firstAttribute="trailing" secondItem="wF0-wS-K0w" secondAttribute="trailing" id="1VK-cJ-a9y"/>
+                            <constraint firstItem="Ty8-CJ-mov" firstAttribute="trailing" secondItem="wF0-wS-K0w" secondAttribute="trailing" id="9Pg-Z5-6As"/>
+                            <constraint firstItem="wF0-wS-K0w" firstAttribute="top" secondItem="CH0-na-u68" secondAttribute="top" id="AV8-CI-DHu"/>
+                            <constraint firstItem="Ty8-CJ-mov" firstAttribute="bottom" secondItem="wF0-wS-K0w" secondAttribute="bottom" id="Xvw-Fr-hwO"/>
+                            <constraint firstItem="Ty8-CJ-mov" firstAttribute="bottom" secondItem="wF0-wS-K0w" secondAttribute="bottom" id="d2E-gh-YOs"/>
+                            <constraint firstItem="wF0-wS-K0w" firstAttribute="top" secondItem="CH0-na-u68" secondAttribute="top" id="gmJ-ke-Yzq"/>
+                            <constraint firstItem="wF0-wS-K0w" firstAttribute="leading" secondItem="Ty8-CJ-mov" secondAttribute="leading" id="lbh-f4-Bii"/>
+                            <constraint firstItem="wF0-wS-K0w" firstAttribute="leading" secondItem="Ty8-CJ-mov" secondAttribute="leading" id="rwR-r4-1ub"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ty8-CJ-mov"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Map" id="Tqe-j8-LIj">
+                        <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="3"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="mapboxView" destination="wF0-wS-K0w" id="3KP-yc-PdS"/>
+                        <segue destination="zXE-DY-roo" kind="show" identifier="ShowPlayground" id="hne-mu-PwQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tV-z4-rNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="19.565217391304348"/>
+        </scene>
+        <!--Playground-->
+        <scene sceneID="9Ny-FF-o8e">
+            <objects>
+                <viewController id="zXE-DY-roo" userLabel="Playground" customClass="PlaygroundViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhT-Ec-aTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-Cp-9Tt" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ls-2E-ewf">
+                                <rect key="frame" x="0.0" y="323" width="414" height="419"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SA9-jS-9Fs">
+                                        <rect key="frame" x="0.0" y="57" width="414" height="305"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BkZ-mW-qb9">
+                                                <rect key="frame" x="0.0" y="20" width="414" height="265"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="KidsPlain" family="Kids" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cVd-Ay-0JZ">
+                                <rect key="frame" x="0.0" y="423" width="414" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tR8-zD-bM8">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simplePlaygroundElementViewCell" id="KJD-yh-7S0" customClass="SimplePlaygroundElementViewCell" customModule="Borken_Playgrounds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1j-8L-ai0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="50" height="50"/>
+                                        <connections>
+                                            <outlet property="playgroundElementImageView" destination="V1j-8L-ai0" id="9eV-4b-ZmF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="zXE-DY-roo" id="PC8-M1-YuT"/>
+                                    <outlet property="delegate" destination="zXE-DY-roo" id="cEB-yD-gQw"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0WN-9j-sy6">
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="crb-4t-z3Q"/>
+                                    <barButtonItem title="+1" image="VoteUp" style="plain" id="XHF-rI-Hdp" userLabel="UpVote">
+                                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-3"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1X1-en-TyC"/>
+                                    <barButtonItem title="-1" image="VoteDown" style="plain" id="p2M-q6-cFH" userLabel="DownVote">
+                                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-2"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ppN-th-87w"/>
+                                    <barButtonItem title="Item" image="Note" style="plain" id="A6w-oW-cMi" userLabel="Remark">
+                                        <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="-5"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KUT-Vh-sze"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jqf-QI-DPU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="fGZ-Rw-KbU">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="M09-Fa-V6R"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="Hew-Pu-29g">
+                            <inset key="imageInsets" minX="-14" minY="1" maxX="0.0" maxY="-5"/>
+                            <color key="tintColor" red="0.24058049917221069" green="0.55343693494796753" blue="0.20234209299087524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonClicked:" destination="zXE-DY-roo" id="76a-kB-h4v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="SA9-jS-9Fs" id="dhL-hi-B5r"/>
+                        <outlet property="descriptions" destination="BkZ-mW-qb9" id="mDT-Iu-IyC"/>
+                        <outlet property="imageSlideshow" destination="0ZX-Cp-9Tt" id="Kyc-ee-SKJ"/>
+                        <outlet property="playgroundElementsCollectionView" destination="cVd-Ay-0JZ" id="rcs-sO-7Qg"/>
+                        <outlet property="scrollView" destination="5Ls-2E-ewf" id="N6B-0K-BGL"/>
+                        <outlet property="toolbar" destination="0WN-9j-sy6" id="VFC-8T-Ax4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDX-Dm-3N5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3002.898550724638" y="19.419642857142858"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back" width="48" height="48"/>
+        <image name="Filter" width="48" height="48"/>
+        <image name="Map" width="75" height="75"/>
+        <image name="Note" width="60" height="60"/>
+        <image name="VoteDown" width="75" height="75"/>
+        <image name="VoteUp" width="75" height="75"/>
+    </resources>
 </document>
