@@ -106,6 +106,21 @@ class User {
         return avatarURL
     }
     
+    func saveRemark(comment: String, playground: Playground?) {
+        
+        if let selectedPlayground = playground {
+            
+            let db = Firestore.firestore()
+            
+            var documentData: [String:Any] = [:]
+            documentData["remarkedPlayground"] = selectedPlayground.id
+            documentData["remarkee"] = documentId
+            documentData["text"] = comment
+            
+            db.collection("userRemarks").addDocument(data: documentData)
+        }
+    }
+    
     func save() {
         let db = Firestore.firestore()
         let document = db.collection("users").document(self.documentId)

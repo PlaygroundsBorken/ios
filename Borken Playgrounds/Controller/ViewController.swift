@@ -204,9 +204,11 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
     // Allow callout view to appear when an annotation is tapped.
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         
-        self.selectedPlayground = annotation.subtitle ?? ""
-        //performSegue(withIdentifier: "ShowPlayground", sender: nil)
-        performSegue(withIdentifier: "ShowAvatarView", sender: nil)
+        if annotation as? PlaygroundAnnotation != nil {
+            self.selectedPlayground = annotation.subtitle ?? ""
+            performSegue(withIdentifier: "ShowPlayground", sender: nil)
+        }
+        //performSegue(withIdentifier: "ShowAvatarView", sender: nil)
         return false
     }
     

@@ -8,15 +8,30 @@
 
 import Foundation
 import UIKit
+import SnapKit
+import QuickTableViewController
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: QuickTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerSettingsBundle()
         NotificationCenter.default.addObserver(self, selector: #selector(SettingsViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
+        tableContents = [
+            
+            Section(title: "Avatar ändern", rows: [
+                TapActionRow(text: "Jetzt ändern", action: { [weak self] in self?.showAlert($0) })
+                ]),
+        ]
     }
+    
+    func showAlert(_ sender: Row) {
+        if sender.text == "Jetzt ändern" {
+            performSegue(withIdentifier: "ShowAvatarView", sender: nil)
+        }
+    }
+    
     func registerSettingsBundle(){
         let appDefaults = [String:AnyObject]()
         UserDefaults.standard.register(defaults: appDefaults)

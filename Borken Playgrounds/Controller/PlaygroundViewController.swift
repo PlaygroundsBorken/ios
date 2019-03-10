@@ -16,13 +16,13 @@ import CoreLocation
 
 class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var downVoteButton: UIBarButtonItem!
+    @IBOutlet var upVoteButton: UIBarButtonItem!
     @IBOutlet var playgroundElementsCollectionView: UICollectionView!
     var playgroundId: String  = ""
     var playgroundElements: [PlaygroundElement] = []
     var selectedPlayground: Playground? = nil
-    
+    var defaultButtonColor: UIColor? = nil
     @IBOutlet var descriptions: UITextView!
     
     @IBOutlet var toolbar: UIToolbar!
@@ -38,6 +38,22 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         minimumLineSpacing: 30,
         sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     )
+    
+    fileprivate func updateButtons() {
+        self.upVoteButton.tintColor = defaultButtonColor
+        self.downVoteButton.tintColor = defaultButtonColor
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if appDelegate.user?.downVotedPlaygrounds.contains(where: { (playgroundId) -> Bool in
+            return playgroundId == selectedPlayground?.id
+        }) ?? false {
+            self.downVoteButton.tintColor = UIColor.red
+        }
+        if appDelegate.user?.upVotedPlaygrounds.contains(where: { (playgroundId) -> Bool in
+            return playgroundId == selectedPlayground?.id
+        }) ?? false {
+            self.upVoteButton.tintColor = UIColor.green
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +72,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                     })
                     if (playground != nil) {
                         self.initPlayground(playground: playground!)
+                        self.checkIfControlsShouldBeShown()
                     }
                 } else {
                     print("Document does not exist")
@@ -77,6 +94,9 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         self.playgroundElementsCollectionView.contentInsetAdjustmentBehavior = .always
         
         self.playgroundElementsCollectionView.allowsMultipleSelection = true
+        
+        self.defaultButtonColor = upVoteButton.tintColor
+        updateButtons()
     }
     
     private func checkIfControlsShouldBeShown() {
@@ -94,12 +114,13 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                 
                 let distanceBetweenTwoLocations = playgroundLocation.distance(from: userLocation)
                 
-                if (distanceBetweenTwoLocations < 100) {
+                if (distanceBetweenTwoLocations < 200) {
                     
                     if (!user.visitedPlaygrounds.contains(playground.id)) {
                         user.visitedPlaygrounds.append(playground.id)
                         user.save()
                     }
+                    toolbar.isHidden = false
                 }
             }
         }
@@ -107,51 +128,18 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func setContraints() {
         
-        /*
-         imageSlideshow.translatesAutoresizingMaskIntoConstraints = false
-         imageSlideshow.snp.makeConstraints { (make) in
-         make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-         make.width.equalTo(view.snp.width)
-         make.left.right.equalTo(view)
-         }
-         
-         imageSlideshow.snp.makeConstraints { (make) in
-         make.height.equalTo(imageSlideshow.snp.width).multipliedBy(9 / 16)
-         }*/
+        descriptions.snp.makeConstraints { (make) in
+            make.top.equalTo(imageSlideshow.snp.bottom)
+            make.left.right.equalTo(view)
+            make.bottom.equalTo(playgroundElementsCollectionView.snp.top)
+            make.height.lessThanOrEqualTo(400)
+        }
         
-        /*
-         scrollView.snp.makeConstraints { (make) in
-         make.top.equalTo(imageSlideshow.snp.bottom)
-         make.left.right.equalTo(view)
-         make.bottom.equalTo(toolbar.snp.top)
-         }
-         contentView.snp.makeConstraints { (make) in
-         make.top.bottom.equalTo(scrollView)
-         make.left.right.equalTo(view) // => IMPORTANT: this makes the width of the contentview static (= size of the screen), while the contentview will stretch vertically
-         }
-         
-         descriptions.snp.makeConstraints { (make) in
-         make.top.equalTo(imageSlideshow)
-         make.left.right.equalTo(view)
-         }
-         
-         playgroundElementsCollectionView.snp.makeConstraints { (make) in
-         make.top.equalTo(descriptions.snp.bottom)
-         make.left.right.equalTo(view)
-         make.height.equalTo(50)
-         make.bottom.equalTo(scrollView)
-         }
-         toolbar.translatesAutoresizingMaskIntoConstraints = false
-         toolbar.snp.makeConstraints { (make) in
-         make.top.equalTo(scrollView.snp.bottom)
-         make.height.equalTo(48)
-         make.left.right.equalTo(view)
-         if #available(iOS 11, *) {
-         make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-         } else {
-         make.bottom.equalTo(view)
-         }
-         }*/
+        playgroundElementsCollectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(descriptions.snp.bottom)
+            make.left.right.equalTo(view)
+            make.bottom.equalTo(toolbar.snp.top)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -185,6 +173,72 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         self.descriptions.text = playground.description?.htmlToString
         self.descriptions.sizeToFit()
         setContraints()
+    }
+    @IBAction func upVotePlayground(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if appDelegate.user?.upVotedPlaygrounds.first(where: { (playground) -> Bool in
+            return playground == selectedPlayground?.id
+        }) == nil {
+            if let playgroundId = selectedPlayground?.id {
+                appDelegate.user?.upVotedPlaygrounds.append(playgroundId)
+            }
+        } else {
+            appDelegate.user?.upVotedPlaygrounds.removeAll(where: { (playgroundId) -> Bool in
+                return playgroundId == selectedPlayground?.id
+            })
+        }
+        appDelegate.user?.downVotedPlaygrounds.removeAll(where: { (playgroundId) -> Bool in
+            return playgroundId == selectedPlayground?.id
+        })
+        updateButtons()
+        appDelegate.user?.save()
+    }
+    @IBAction func downVotePlayground(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if appDelegate.user?.downVotedPlaygrounds.first(where: { (playground) -> Bool in
+            return playground == selectedPlayground?.id
+        }) == nil {
+            if let playgroundId = selectedPlayground?.id {
+                appDelegate.user?.downVotedPlaygrounds.append(playgroundId)
+            }
+        } else {
+            appDelegate.user?.downVotedPlaygrounds.removeAll(where: { (playgroundId) -> Bool in
+                return playgroundId == selectedPlayground?.id
+            })
+        }
+        appDelegate.user?.upVotedPlaygrounds.removeAll(where: { (playgroundId) -> Bool in
+            return playgroundId == selectedPlayground?.id
+        })
+        
+        updateButtons()
+        appDelegate.user?.save()
+    }
+    @IBAction func addRemark(_ sender: Any) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Spielplatz kommentieren", message: "Hinterlasse doch einen Kommentar zum Spielplatz. Keine Angst die Kommentare kann kein anderer sehen, aber wir schauen uns diese an und wenn reparieren Geräte falls Sie kaputt sind. Wir freuen uns aber auch über Lob ;-)", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = "Kommentar"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Absenden", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            
+            if let comment = textField?.text {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.user?.userRemarks.append(comment)
+                appDelegate.user?.saveRemark(comment: comment, playground: self.selectedPlayground)
+                appDelegate.user?.save()
+            }
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

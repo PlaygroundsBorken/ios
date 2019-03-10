@@ -140,6 +140,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
+  - QuickTableViewController (1.1.0)
   - SkeletonView (1.4.2)
   - SnapKit (4.2.0)
   - SparrowKit (1.5.3)
@@ -154,6 +155,7 @@ DEPENDENCIES:
   - Kingfisher
   - KingfisherWebP
   - Mapbox-iOS-SDK
+  - QuickTableViewController
   - SkeletonView
   - SnapKit
   - SparrowKit
@@ -182,6 +184,7 @@ SPEC REPOS:
     - Mapbox-iOS-SDK
     - nanopb
     - Protobuf
+    - QuickTableViewController
     - SkeletonView
     - SnapKit
     - SparrowKit
@@ -209,11 +212,12 @@ SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 225036950837cbe408e6b333e51cd6001c122499
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  QuickTableViewController: 129e71fc37a69991aff02bc946723d51a13d6aa5
   SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SparrowKit: 8a2991c81d6ab3038d4a41a98a1a73ea17d1a977
   SPPermission: 975bd9c525cd003088b5b360860c6f9d9a94a8d6
 
-PODFILE CHECKSUM: 179c47134f28052b7c20a2439067a677c55f5660
+PODFILE CHECKSUM: 0d57ecc9e359cff6d6646a23443c0ccbc6756490
 
 COCOAPODS: 1.5.2
