@@ -45,6 +45,7 @@
                     <connections>
                         <segue destination="IWz-LV-T7f" kind="relationship" relationship="viewControllers" id="Nak-Rv-81U"/>
                         <segue destination="Nsr-hw-5Lk" kind="relationship" relationship="viewControllers" id="xIG-XO-jmq"/>
+                        <segue destination="PXC-n2-y5S" kind="relationship" relationship="viewControllers" id="3Fo-tV-xZr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4W-cc-s9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +95,7 @@
                             <outlet property="delegate" destination="Nsr-hw-5Lk" id="OjR-lX-ap6"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="" image="Filter" id="O1h-CX-Pz9">
+                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="O1h-CX-Pz9">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Spielgeräte" id="leO-kj-LOB">
@@ -108,6 +109,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfI-Dy-HFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1515.9420289855075" y="-784.23913043478262"/>
+        </scene>
+        <!--Avatar-->
+        <scene sceneID="HYz-mM-J02">
+            <objects>
+                <viewController storyboardIdentifier="AvatarViewController" title="Avatar" id="oK6-CS-tGA" customClass="AvatarViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XCO-q1-vMD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-U7-wHp">
+                                <rect key="frame" x="0.0" y="44" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Ud-Ucy">
+                                <rect key="frame" x="130" y="330" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ybh-9I-sfO"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="4gs-U7-wHp" id="bOY-Hp-kPj"/>
+                        <outlet property="avatarWrapper" destination="qg4-Ud-Ucy" id="BRz-8w-Q5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGb-2g-5CM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3349" y="-887"/>
         </scene>
         <!--Mapbox-->
         <scene sceneID="OLF-rk-ihu">
@@ -135,17 +165,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ty8-CJ-mov"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Map" id="Tqe-j8-LIj">
+                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="Tqe-j8-LIj">
                         <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="3"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="mapboxView" destination="wF0-wS-K0w" id="3KP-yc-PdS"/>
                         <segue destination="zXE-DY-roo" kind="show" identifier="ShowPlayground" id="hne-mu-PwQ"/>
+                        <segue destination="oK6-CS-tGA" kind="show" identifier="ShowAvatarView" id="j9Y-UI-cse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tV-z4-rNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="19.565217391304348"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ch3-Su-vYG">
+            <objects>
+                <viewController id="PXC-n2-y5S" customClass="SettingsViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cl3-u9-HHB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Kwt-q1-TKb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="O25-ub-eNe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xP5-uB-jaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="850"/>
         </scene>
         <!--Playground-->
         <scene sceneID="9Ny-FF-o8e">
@@ -279,8 +326,6 @@
     </scenes>
     <resources>
         <image name="Back" width="48" height="48"/>
-        <image name="Filter" width="48" height="48"/>
-        <image name="Map" width="75" height="75"/>
         <image name="Note" width="60" height="60"/>
         <image name="VoteDown" width="75" height="75"/>
         <image name="VoteUp" width="75" height="75"/>

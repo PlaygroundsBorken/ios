@@ -16,7 +16,7 @@ class AvatarSetting: Decodable {
 class BodyPart: Decodable {
     var id: String
     var value: String
-    var selected: Bool = false
+    var selected: Bool?
 }
 
 class AvatarSettings: Decodable {
@@ -26,23 +26,49 @@ class AvatarSettings: Decodable {
 
 extension AvatarSettings {
     
-    func selectAvatarSetting(body_part: String, option_value: String) {
+    
+    func createAvatarUrl() -> String {
         
-        avatarSetting.filter { (avatarSetting) -> Bool in
-            avatarSetting.body_part == body_part
-            }.forEach { (avatarSetting) in
-                avatarSetting.options.forEach({ (option) in
-                    option.selected = option.value == option_value
-                })
+        var avatarURL = "https://avataaars.io/png/260?"
+        
+        avatarSetting.forEach { (avatarSetting) in
+            
+            if let selectedOption = avatarSetting.options.first(where: { (body) -> Bool in
+                return body.selected != nil && body.selected!
+            })?.id {
+                avatarURL += "&"
+                avatarURL += avatarSetting.body_part
+                avatarURL += "="
+                avatarURL += selectedOption
+            }
+        }
+        
+        avatarURL += "&avatarStyle=Circle"
+        
+        return avatarURL
+    }
+    
+    func fromAvatarUrl(avatarUrl: String) {
+        
+        avatarSetting.forEach { (setting) in
+            
+            setting.options.forEach({ (part) in
+                part.selected = avatarUrl.contains(setting.body_part + "=" + part.id)
+            })
         }
     }
     
-    func setFromAvatarUrl(avatarURL: String) {
+    func selectBodyPartOption(bodyPart: String?, option: String?) {
         
-        avatarSetting.forEach { (setting) in
-            setting.options.forEach({ (body) in
-                body.selected = avatarURL.contains(setting.body_part + "=" + body.id)
-            })
+        if let selectedBodyPart = bodyPart {
+            if let selectedOption = option {
+                
+                avatarSetting.first { (setting) -> Bool in
+                    setting.body_part == selectedBodyPart
+                    }?.options.forEach({ (part) in
+                        part.selected = part.id == selectedOption
+                    })
+            }
         }
     }
     

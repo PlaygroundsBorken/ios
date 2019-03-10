@@ -30,6 +30,10 @@
 		32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */; };
 		32F15664223538900035FA38 /* PlaygroundNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F15663223538900035FA38 /* PlaygroundNotifications.swift */; };
 		32F1566622353B450035FA38 /* AvatarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566522353B450035FA38 /* AvatarSettings.swift */; };
+		32F15668223542C20035FA38 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F15667223542C20035FA38 /* SettingsViewController.swift */; };
+		32F1566A2235436A0035FA38 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32F156692235436A0035FA38 /* Settings.bundle */; };
+		32F1566D223543910035FA38 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566C223543910035FA38 /* SettingsBundleHelper.swift */; };
+		32F1566F223546580035FA38 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566E223546580035FA38 /* AvatarViewController.swift */; };
 		32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */; };
 		551566F374467C0FF933B7DD /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574018664D50E988E8EFDCF8 /* Pods_Borken_PlaygroundsUITests.framework */; };
 		B6B8BA1B027299EEAC3CE245 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92F2AB2887953A666C70297 /* Pods_Borken_PlaygroundsTests.framework */; };
@@ -83,6 +87,10 @@
 		32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		32F15663223538900035FA38 /* PlaygroundNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundNotifications.swift; sourceTree = "<group>"; };
 		32F1566522353B450035FA38 /* AvatarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSettings.swift; sourceTree = "<group>"; };
+		32F15667223542C20035FA38 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		32F156692235436A0035FA38 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		32F1566C223543910035FA38 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
+		32F1566E223546580035FA38 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA623A4AA1A0484E7192B89 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsUITests/Pods-Borken PlaygroundsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2CED1DBE7DC78AEE467374 /* Pods-Borken Playgrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken Playgrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +173,8 @@
 				3240CAAF217E36E7003F4BDE /* ViewController.swift */,
 				3220FB3F21B27D4400294B3F /* PlaygroundViewController.swift */,
 				322924BD21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift */,
+				32F15667223542C20035FA38 /* SettingsViewController.swift */,
+				32F1566E223546580035FA38 /* AvatarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +214,8 @@
 		3240CAAC217E36E7003F4BDE /* Borken Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				32F156692235436A0035FA38 /* Settings.bundle */,
+				32F1566B223543820035FA38 /* Helper */,
 				327C98A221BAB84500F19F2C /* fonts */,
 				322924BF21B2CEFC00F3ECDB /* Views */,
 				3220FB3C21B276EE00294B3F /* Controller */,
@@ -244,6 +256,14 @@
 				327C98A321BAB85000F19F2C /* Kidsn.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		32F1566B223543820035FA38 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				32F1566C223543910035FA38 /* SettingsBundleHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		457C4F9B4832264BAC3226D0 /* Frameworks */ = {
@@ -375,6 +395,7 @@
 				3240CAB5217E36E9003F4BDE /* Assets.xcassets in Resources */,
 				327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */,
 				3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */,
+				32F1566A2235436A0035FA38 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,8 +529,10 @@
 			files = (
 				3260345A223402ED009D75A4 /* User.swift in Sources */,
 				322924C321B2D2D800F3ECDB /* PlaygroundElement.swift in Sources */,
+				32F1566F223546580035FA38 /* AvatarViewController.swift in Sources */,
 				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
 				3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */,
+				32F1566D223543910035FA38 /* SettingsBundleHelper.swift in Sources */,
 				3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */,
 				32F15664223538900035FA38 /* PlaygroundNotifications.swift in Sources */,
 				3220FB3E21B2795500294B3F /* CustomImageAnnotationView.swift in Sources */,
@@ -518,6 +541,7 @@
 				322924C521B2DBB600F3ECDB /* ColumnFlowLayout.swift in Sources */,
 				32093771222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift in Sources */,
 				322924BE21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift in Sources */,
+				32F15668223542C20035FA38 /* SettingsViewController.swift in Sources */,
 				3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */,
 				3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */,
 				3220FB4021B27D4400294B3F /* PlaygroundViewController.swift in Sources */,

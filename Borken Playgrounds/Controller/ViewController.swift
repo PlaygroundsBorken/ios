@@ -205,8 +205,8 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         
         self.selectedPlayground = annotation.subtitle ?? ""
-        performSegue(withIdentifier: "ShowPlayground", sender: nil)
-        
+        //performSegue(withIdentifier: "ShowPlayground", sender: nil)
+        performSegue(withIdentifier: "ShowAvatarView", sender: nil)
         return false
     }
     
@@ -261,11 +261,13 @@ extension MapboxViewController: CLLocationManagerDelegate {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 if let user = appDelegate.user {
                     if (!user.visitedPlaygrounds.contains(playground.id)) {
-                        let visitedPlaygroundsByUser = user.visitedPlaygrounds.count
                         user.visitedPlaygrounds.append(playground.id)
-                        if let notification = appDelegate.notifications?.visitedPlaygroundsNotifications.first(where: { (notification) -> Bool in
+                        let visitedPlaygroundsByUser = user.visitedPlaygrounds.count
+                        let firstNotification = appDelegate.notifications?.visitedPlaygroundsNotifications.first(where: { (notification) -> Bool in
                             return notification.visitedPlaygrounds == visitedPlaygroundsByUser
-                        }) {
+                        })
+                        
+                        if let notification = firstNotification {
                             let userInfo = notification.toHashMap()
                             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: notification.title), object: self, userInfo: userInfo))
                         }

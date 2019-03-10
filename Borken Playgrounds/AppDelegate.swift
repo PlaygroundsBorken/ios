@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedPlaygroundElements: [PlaygroundElement] = []
     var remoteConfig: RemoteConfig? = nil
     var notifications: PlaygroundNotifications? = nil
+    var avatars: AvatarSettings? = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -79,6 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.notifications = PlaygroundNotifications.tryParse(json: texts)
                 }
                 
+                if let avatar = self.loadAvatarSettings() {
+                    
+                    self.avatars = AvatarSettings.tryParse(json: avatar)
+                }
+                
             } else {
                 print("Config not fetched")
                 print("Error: \(error?.localizedDescription ?? "No error available.")")
@@ -111,7 +117,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        SettingsBundleHelper.checkAndExecuteSettings()
+        SettingsBundleHelper.setVersionAndBuildNumber()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
