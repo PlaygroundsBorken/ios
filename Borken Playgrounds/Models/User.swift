@@ -110,13 +110,14 @@ class User {
         let db = Firestore.firestore()
         let document = db.collection("users").document(self.documentId)
         var documentData: [String:Any] = [:]
-        documentData["visitedPlaygrounds"] = self.visitedPlaygrounds.flatMap({ (playgroundId) -> [String:Bool] in
+        
+        documentData["visitedPlaygrounds"] = self.visitedPlaygrounds.map { (playgroundId) -> [String:Bool] in
+            return [playgroundId:true]
+        }
+        documentData["downVotedPlaygrounds"] = self.downVotedPlaygrounds.map({ (playgroundId) -> [String:Bool] in
             return [playgroundId:true]
         })
-        documentData["downVotedPlaygrounds"] = self.downVotedPlaygrounds.flatMap({ (playgroundId) -> [String:Bool] in
-            return [playgroundId:true]
-        })
-        documentData["upVotedPlaygrounds"] = self.upVotedPlaygrounds.flatMap({ (playgroundId) -> [String:Bool] in
+        documentData["upVotedPlaygrounds"] = self.upVotedPlaygrounds.map({ (playgroundId) -> [String:Bool] in
             return [playgroundId:true]
         })
         documentData["userRemarks"] = self.userRemarks

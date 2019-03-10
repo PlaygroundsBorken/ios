@@ -28,8 +28,8 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
         
         self.locationManager = CLLocationManager()
         self.locationManager?.delegate = self
+        self.locationManager?.requestWhenInUseAuthorization()
         if let currentLocation = self.locationManager?.location?.coordinate {
-        
             self.mapboxView.setCenter(currentLocation, zoomLevel: 11, animated: false)
         } else {
             self.mapboxView.setCenter(CLLocationCoordinate2D(latitude: 51.843890, longitude: 6.858330), zoomLevel: 11, animated: false)
@@ -82,6 +82,7 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
             })
         }
         filterPlaygroundsOnMap()
+        addMeMarker()
     }
     
     private func filterPlaygroundsOnMap() {
@@ -142,20 +143,6 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
         annotation.subtitle = playground.id
         self.allPlaygroundAnnotations[playground.id] = annotation
         self.mapboxView.addAnnotation(annotation)
-        
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(playground.lat!, playground.lng!)
-        
-        /* Create a region centered on desired location,
-         choose a radius for the region (in meters)
-         choose a unique identifier for that region */
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter,
-                                              radius: 100,
-                                              identifier: playground.id)
-        
-        geofenceRegion.notifyOnEntry = true
-        geofenceRegion.notifyOnExit = true
-        
-        locationManager?.startMonitoring(for: geofenceRegion)
     }
     
     // Use the default marker. See also: our view annotation or custom marker examples.
@@ -230,6 +217,20 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
             viewController.playgroundId = self.selectedPlayground ?? ""
         }
     }
+    
+    fileprivate func addMeMarker() {
+        if let currentLocation = self.locationManager?.location?.coordinate {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            if let avatar = appDelegate.user?.avatarUrl {
+                self.mapboxView.removeAnnotation(meMarker)
+                self.meMarker = AvatarAnnotation()
+                self.meMarker.avatarUrl = avatar
+                self.meMarker.coordinate = currentLocation
+                self.meMarker.title = "Me"
+                self.mapboxView.addAnnotation(meMarker)
+            }
+        }
+    }
 }
 
 extension UINavigationController {
@@ -239,56 +240,39 @@ extension UINavigationController {
 }
 
 extension MapboxViewController: CLLocationManagerDelegate {
-    // called when user Exits a monitored region
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if region is CLCircularRegion {
-            // Do what you want if this information
-        }
-    }
-    
-    // called when user Enters a monitored region
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        if region is CLCircularRegion {
-            // Do what you want if this information
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            if let user = appDelegate.user {
-                
-                guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-                loadedPlaygrounds.forEach({ (playground) -> Void in
-                    
-                    if (playground.lat == nil || playground.lng == nil)
-                    {
-                        return
-                    }
-                    let playgroundLocation = CLLocation(latitude: CLLocationDegrees(playground.lat!), longitude: CLLocationDegrees(playground.lng!))
-                    
-                    let userLocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-                    
-                    let distanceBetweenTwoLocations = playgroundLocation.distance(from: userLocation)
-                    
-                    if (distanceBetweenTwoLocations < 100) {
-                        
-                        if (!user.visitedPlaygrounds.contains(playground.id)) {
-                            user.visitedPlaygrounds.append(playground.id)
-                            user.save()
-                        }
-                    }
-                })
-            }
-        }
-    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        addMeMarker()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let avatar = appDelegate.user?.avatarUrl {
-            self.mapboxView.removeAnnotation(meMarker)
-            self.meMarker = AvatarAnnotation()
-            self.meMarker.avatarUrl = avatar
-            self.meMarker.coordinate = locValue
-            self.meMarker.title = "Me"
-            self.mapboxView.addAnnotation(meMarker)
-        }
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        loadedPlaygrounds.forEach({ (playground) -> Void in
+            
+            if (playground.lat == nil || playground.lng == nil)
+            {
+                return
+            }
+            let playgroundLocation = CLLocation(latitude: CLLocationDegrees(playground.lat!), longitude: CLLocationDegrees(playground.lng!))
+            
+            let userLocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+            
+            let distanceBetweenTwoLocations = playgroundLocation.distance(from: userLocation)
+            
+            if (distanceBetweenTwoLocations < 100) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                if let user = appDelegate.user {
+                    if (!user.visitedPlaygrounds.contains(playground.id)) {
+                        let visitedPlaygroundsByUser = user.visitedPlaygrounds.count
+                        user.visitedPlaygrounds.append(playground.id)
+                        if let notification = appDelegate.notifications?.visitedPlaygroundsNotifications.first(where: { (notification) -> Bool in
+                            return notification.visitedPlaygrounds == visitedPlaygroundsByUser
+                        }) {
+                            let userInfo = notification.toHashMap()
+                            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: notification.title), object: self, userInfo: userInfo))
+                        }
+                        user.save()
+                    }
+                }
+            }
+        })
     }
 }

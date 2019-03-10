@@ -16,19 +16,26 @@ import NotificationCenter
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let avatarSettings = "avatar_settings"
+    let playgroundNotifications = "playground_notifications"
+    
     var window: UIWindow?
     var user: User? = nil
     var selectedPlaygroundElements: [PlaygroundElement] = []
     var remoteConfig: RemoteConfig? = nil
+    var notifications: PlaygroundNotifications? = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         self.remoteConfig = RemoteConfig.remoteConfig()
         self.remoteConfig?.configSettings = RemoteConfigSettings(developerModeEnabled: true)
+        self.remoteConfig?.setDefaults(fromPlist: "RemoteConfigDefaults")
+        
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
         
         loadUser()
+        fetchRemoteConfig()
         
         return true
     }
@@ -50,6 +57,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             })
         }
+    }
+    
+    private func fetchRemoteConfig() {
+        
+        var expirationDuration = 3600
+        // If your app is using developer mode, expirationDuration is set to 0, so each fetch will
+        // retrieve values from the service.
+        if let developerMode = self.remoteConfig?.configSettings.isDeveloperModeEnabled {
+            if (developerMode) {
+                expirationDuration = 0
+            }
+        }
+        self.remoteConfig?.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { (status, error) -> Void in
+            if status == .success {
+                print("Config fetched!")
+                self.remoteConfig?.activateFetched()
+                
+                if let texts = self.loadNotificationTexts() {
+                    
+                    self.notifications = PlaygroundNotifications.tryParse(json: texts)
+                }
+                
+            } else {
+                print("Config not fetched")
+                print("Error: \(error?.localizedDescription ?? "No error available.")")
+            }
+        }
+    }
+    
+    func loadNotificationTexts() -> String? {
+        
+        return self.remoteConfig?[self.playgroundNotifications].stringValue
+    }
+    
+    func loadAvatarSettings() -> String? {
+        
+        return self.remoteConfig?[self.avatarSettings].stringValue
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

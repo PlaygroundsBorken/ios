@@ -27,6 +27,9 @@
 		3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345B2234244E009D75A4 /* AvatarAnnotation.swift */; };
 		3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */; };
 		327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 327C98A321BAB85000F19F2C /* Kidsn.ttf */; };
+		32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */; };
+		32F15664223538900035FA38 /* PlaygroundNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F15663223538900035FA38 /* PlaygroundNotifications.swift */; };
+		32F1566622353B450035FA38 /* AvatarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566522353B450035FA38 /* AvatarSettings.swift */; };
 		32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */; };
 		551566F374467C0FF933B7DD /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574018664D50E988E8EFDCF8 /* Pods_Borken_PlaygroundsUITests.framework */; };
 		B6B8BA1B027299EEAC3CE245 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92F2AB2887953A666C70297 /* Pods_Borken_PlaygroundsTests.framework */; };
@@ -77,6 +80,9 @@
 		3260345B2234244E009D75A4 /* AvatarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnnotation.swift; sourceTree = "<group>"; };
 		3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarAnnotationView.swift; sourceTree = "<group>"; };
 		327C98A321BAB85000F19F2C /* Kidsn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kidsn.ttf; sourceTree = "<group>"; };
+		32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		32F15663223538900035FA38 /* PlaygroundNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundNotifications.swift; sourceTree = "<group>"; };
+		32F1566522353B450035FA38 /* AvatarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSettings.swift; sourceTree = "<group>"; };
 		32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA623A4AA1A0484E7192B89 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken PlaygroundsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Borken PlaygroundsUITests/Pods-Borken PlaygroundsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2CED1DBE7DC78AEE467374 /* Pods-Borken Playgrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken Playgrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 				32603459223402ED009D75A4 /* User.swift */,
 				3220FB3721B2723800294B3F /* Playground.swift */,
 				322924C221B2D2D800F3ECDB /* PlaygroundElement.swift */,
+				32F15663223538900035FA38 /* PlaygroundNotifications.swift */,
+				32F1566522353B450035FA38 /* AvatarSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				3240CAB4217E36E9003F4BDE /* Assets.xcassets */,
 				3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */,
 				3240CAB9217E36E9003F4BDE /* Info.plist */,
+				32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */,
 			);
 			path = "Borken Playgrounds";
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */,
 				3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */,
 				32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */,
 				3240CAB5217E36E9003F4BDE /* Assets.xcassets in Resources */,
@@ -501,6 +511,7 @@
 				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
 				3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */,
 				3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */,
+				32F15664223538900035FA38 /* PlaygroundNotifications.swift in Sources */,
 				3220FB3E21B2795500294B3F /* CustomImageAnnotationView.swift in Sources */,
 				322924C121B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift in Sources */,
 				3220FB3821B2723800294B3F /* Playground.swift in Sources */,
@@ -510,6 +521,7 @@
 				3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */,
 				3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */,
 				3220FB4021B27D4400294B3F /* PlaygroundViewController.swift in Sources */,
+				32F1566622353B450035FA38 /* AvatarSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
