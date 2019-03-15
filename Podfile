@@ -21,6 +21,7 @@ target 'Borken Playgrounds' do
   pod 'SnapKit'
   pod 'SparrowKit'
   pod 'QuickTableViewController'
+  pod 'Carte'
   
   target 'Borken PlaygroundsTests' do
     inherit! :search_paths
@@ -31,5 +32,10 @@ target 'Borken Playgrounds' do
     inherit! :search_paths
     # Pods for testing
   end
+    
+end
 
+post_install do |installer|
+      pods_dir = File.dirname(installer.pods_project.path)
+      at_exit { `ruby #{pods_dir}/Carte/Sources/Carte/carte.rb configure` }
 end

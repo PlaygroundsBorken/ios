@@ -29,7 +29,7 @@ class AvatarViewController: UIViewController {
             self.avatarImageView.kf.setImage(with: url)
             
             self.avatarImageView.snp.makeConstraints { (make) in
-                make.top.equalTo(self.safeArea.top).offset(UIApplication.shared.statusBarFrame.size.height)
+                make.top.equalTo(self.safeArea.top).offset(navigationBarHeight + UIApplication.shared.statusBarFrame.size.height)
                 make.centerX.equalTo(self.view)
                 make.width.equalTo(200)
                 make.height.equalTo(200)
@@ -61,7 +61,9 @@ class AvatarViewController: UIViewController {
             })
             
             let pickerTextField = UITextField(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: 216)))
-            
+            pickerTextField.borderStyle = UITextField.BorderStyle.roundedRect
+            let padding = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+            pickerTextField.bounds.inset(by: padding)
             if let selectedOption = avatarSetting.options.first(where: { (part) -> Bool in
                 return part.selected != nil && part.selected!
             }) {
@@ -76,12 +78,12 @@ class AvatarViewController: UIViewController {
             pickerToPickerText[pickerView] = pickerTextField
             pickerTextToPicker[pickerTextField] = pickerView
             pickerTextField.snp.makeConstraints({ (make) in
-                make.left.right.equalTo(avatarWrapper)
+                make.left.right.equalTo(avatarWrapper).inset(16)
             })
             if (lastPickerText != nil) {
                 
                 pickerTextField.snp.makeConstraints({ (make) in
-                    make.top.equalTo(lastPickerText!.snp.bottom)
+                    make.top.equalTo(lastPickerText!.snp.bottom).offset(10)
                 })
             }
             lastPickerText = pickerTextField
