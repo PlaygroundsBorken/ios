@@ -138,6 +138,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         playgroundElementsCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(descriptions.snp.bottom)
             make.left.right.equalTo(view)
+            make.height.lessThanOrEqualTo(240)
             make.bottom.equalTo(toolbar.snp.top)
         }
     }
@@ -235,6 +236,10 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                 appDelegate.user?.saveRemark(comment: comment, playground: self.selectedPlayground)
                 appDelegate.user?.save()
             }
+        }))
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Abbrechen", style: .default, handler: { (_) in
+            
         }))
         
         // 4. Present the alert.

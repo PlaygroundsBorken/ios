@@ -15,7 +15,9 @@ class AvatarViewController: UIViewController {
     
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var avatarWrapper: UIStackView!
-    
+
+    let avatarImageSteps = [1:1,2:2,3:3,5:4,8:5,11:6,15:7,21:8,25:9]
+    var showAmountOfWrapper = 1
     var pickerToAvatarSetting: [UIPickerView: AvatarSetting] = [UIPickerView: AvatarSetting]()
     var pickerToPickerText: [UIPickerView: UITextField] = [UIPickerView: UITextField]()
     var pickerTextToPicker: [UITextField: UIPickerView] = [UITextField: UIPickerView]()
@@ -38,6 +40,21 @@ class AvatarViewController: UIViewController {
             appDelegate.avatars?.fromAvatarUrl(avatarUrl: avatarUrl)
         }
         
+        if var visitedPlaygroundCount = appDelegate.user?.visitedPlaygrounds.count {
+            
+            if (visitedPlaygroundCount == 0) {
+                visitedPlaygroundCount = 1
+            }
+            
+            if let availableAvatarSpinner = avatarImageSteps[visitedPlaygroundCount] {
+                
+                showAmountOfWrapper = availableAvatarSpinner
+            } else {
+                
+                showAmountOfWrapper = appDelegate.avatars?.avatarSetting.count ?? 1
+            }
+        }
+        
         avatarWrapper.snp.makeConstraints { (make) in
             make.top.equalTo(avatarImageView.snp.bottom)
             make.bottom.left.right.equalTo(view)
@@ -45,7 +62,7 @@ class AvatarViewController: UIViewController {
         
         
         var lastPickerText: UITextField?
-        appDelegate.avatars?.avatarSetting.forEach({ (avatarSetting) in
+        appDelegate.avatars?.avatarSetting.prefix(showAmountOfWrapper).forEach({ (avatarSetting) in
             
             let pickerView = UIPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: 216)))
             
@@ -62,7 +79,7 @@ class AvatarViewController: UIViewController {
             
             let pickerTextField = UITextField(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: 216)))
             pickerTextField.borderStyle = UITextField.BorderStyle.roundedRect
-            let padding = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+            let padding = UIEdgeInsets(top: 8, left: 16, bottom: 6, right: 16)
             pickerTextField.bounds.inset(by: padding)
             if let selectedOption = avatarSetting.options.first(where: { (part) -> Bool in
                 return part.selected != nil && part.selected!
@@ -84,6 +101,11 @@ class AvatarViewController: UIViewController {
                 
                 pickerTextField.snp.makeConstraints({ (make) in
                     make.top.equalTo(lastPickerText!.snp.bottom).offset(10)
+                })
+            } else {
+            
+                pickerTextField.snp.makeConstraints({ (make) in
+                    make.top.equalTo(avatarImageView.snp.bottom).offset(10)
                 })
             }
             lastPickerText = pickerTextField
@@ -110,11 +132,9 @@ extension AvatarViewController: UIPickerViewDelegate, UIPickerViewDataSource, UI
         let avatarSetting = pickerToAvatarSetting[pickerView]
         pickerToPickerText[pickerView]?.text = avatarSetting?.options[row].value;
         
-        pickerToPickerText.keys.forEach { (pickerView) in
-            pickerView.isHidden = true
-        }
-        pickerToPickerText.values.forEach { (textField) in
-            textField.isHidden = false
+        pickerToPickerText.forEach { (key, value) in
+            key.isHidden = true
+            value.isHidden = false
         }
         
         pickerToAvatarSetting[pickerView]?.options[row].selected = true

@@ -28,6 +28,7 @@
 		327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 327C98A321BAB85000F19F2C /* Kidsn.ttf */; };
 		328C2FA8223AC3C900206376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328C2FA7223AC3C900206376 /* Assets.xcassets */; };
 		328C2FAA223AC6D800206376 /* SimpleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */; };
+		32C787FF223D05A70013961A /* CollaborationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C787FE223D05A70013961A /* CollaborationController.swift */; };
 		32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */; };
 		32F15664223538900035FA38 /* PlaygroundNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F15663223538900035FA38 /* PlaygroundNotifications.swift */; };
 		32F1566622353B450035FA38 /* AvatarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566522353B450035FA38 /* AvatarSettings.swift */; };
@@ -86,6 +87,7 @@
 		327C98A321BAB85000F19F2C /* Kidsn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kidsn.ttf; sourceTree = "<group>"; };
 		328C2FA7223AC3C900206376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWebViewController.swift; sourceTree = "<group>"; };
+		32C787FE223D05A70013961A /* CollaborationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationController.swift; sourceTree = "<group>"; };
 		32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		32F15663223538900035FA38 /* PlaygroundNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundNotifications.swift; sourceTree = "<group>"; };
 		32F1566522353B450035FA38 /* AvatarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSettings.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				32F15667223542C20035FA38 /* SettingsViewController.swift */,
 				32F1566E223546580035FA38 /* AvatarViewController.swift */,
 				328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */,
+				32C787FE223D05A70013961A /* CollaborationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			files = (
 				3260345A223402ED009D75A4 /* User.swift in Sources */,
 				322924C321B2D2D800F3ECDB /* PlaygroundElement.swift in Sources */,
+				32C787FF223D05A70013961A /* CollaborationController.swift in Sources */,
 				32F1566F223546580035FA38 /* AvatarViewController.swift in Sources */,
 				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
 				3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */,

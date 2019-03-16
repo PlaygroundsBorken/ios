@@ -12,6 +12,7 @@ import Firebase
 import Kingfisher
 import SparrowKit
 import SPPermission
+import UserNotifications
 
 class MapboxViewController: UIViewController, MGLMapViewDelegate {
     
@@ -52,6 +53,10 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                 }
             }
         }
+        
+        let visitedPlaygroundNotificationCategory = UNNotificationCategory(identifier: "visitedPlaygroundNotification", actions: [], intentIdentifiers: [], options: [])
+        // #1.2 - Register the notification type.
+        UNUserNotificationCenter.current().setNotificationCategories([visitedPlaygroundNotificationCategory])
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,14 +68,14 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
             SPPermission.Dialog.request(with: [.locationWhenInUse, .notification], on: self)
         } else if (!isAllowedNotification) {
             SPPermission.Dialog.request(with: [.notification], on: self)
-            SPPermission.request(.locationWhenInUse, with: {
-                
-                self.locationManager?.startUpdatingLocation()
+            SPPermission.request(.notification, with: {
+                // Callback
             })
         } else if (!isAllowedLocationWhenInUse) {
             SPPermission.Dialog.request(with: [.locationWhenInUse], on: self)
-            SPPermission.request(.notification, with: {
-                // Callback
+            SPPermission.request(.locationWhenInUse, with: {
+                
+                self.locationManager?.startUpdatingLocation()
             })
         } else {
             SPPermission.request(.notification, with: {
@@ -81,6 +86,7 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                 self.locationManager?.startUpdatingLocation()
             })
         }
+        
         filterPlaygroundsOnMap()
         addMeMarker()
     }
@@ -126,8 +132,6 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
             }
         }
     }
-    
-    
     
     func addPlaygroundMarkerToMap(playground: Playground) {
         
@@ -208,6 +212,30 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
             self.selectedPlayground = annotation.subtitle ?? ""
             performSegue(withIdentifier: "ShowPlayground", sender: nil)
         }
+        
+        if annotation as? AvatarAnnotation != nil {
+            
+            if let currentLocation = self.locationManager?.location?.coordinate {
+                loadedPlaygrounds.forEach({ (playground) -> Void in
+                    
+                    if (playground.lat == nil || playground.lng == nil)
+                    {
+                        return
+                    }
+                    let playgroundLocation = CLLocation(latitude: CLLocationDegrees(playground.lat!), longitude: CLLocationDegrees(playground.lng!))
+                    
+                    let userLocation = CLLocation(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
+                    
+                    let distanceBetweenTwoLocations = playgroundLocation.distance(from: userLocation)
+                    
+                    if (distanceBetweenTwoLocations < 100) {
+                        
+                        self.selectedPlayground = playground.id
+                        performSegue(withIdentifier: "ShowPlayground", sender: nil)
+                    }
+                })
+            }
+        }
         //performSegue(withIdentifier: "ShowAvatarView", sender: nil)
         return false
     }
@@ -230,23 +258,13 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                 self.meMarker.coordinate = currentLocation
                 self.meMarker.title = "Me"
                 self.mapboxView.addAnnotation(meMarker)
+                
+                visitPlayground(currentLocation)
             }
         }
     }
-}
-
-extension UINavigationController {
-    var rootViewController : UIViewController? {
-        return viewControllers.first
-    }
-}
-
-extension MapboxViewController: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        addMeMarker()
-        
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+    fileprivate func visitPlayground(_ locValue: CLLocationCoordinate2D) {
         loadedPlaygrounds.forEach({ (playground) -> Void in
             
             if (playground.lat == nil || playground.lng == nil)
@@ -270,13 +288,33 @@ extension MapboxViewController: CLLocationManagerDelegate {
                         })
                         
                         if let notification = firstNotification {
-                            let userInfo = notification.toHashMap()
-                            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: notification.title), object: self, userInfo: userInfo))
+                            let content = UNMutableNotificationContent()
+                            content.categoryIdentifier = "visitedPlaygroundNotification"
+                            content.title = notification.title
+                            content.body = notification.text
+                            content.sound = UNNotificationSound.default
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                            let uuidString = UUID().uuidString
+                            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                         }
                         user.save()
                     }
                 }
             }
         })
+    }
+}
+
+extension UINavigationController {
+    var rootViewController : UIViewController? {
+        return viewControllers.first
+    }
+}
+
+extension MapboxViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let _: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        addMeMarker()
     }
 }

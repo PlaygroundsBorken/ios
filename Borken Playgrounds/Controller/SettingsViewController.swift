@@ -64,9 +64,14 @@ class SettingsViewController: QuickTableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let backItem = UIBarButtonItem()
+        backItem.title = "Zurück"
         if let destinationVC = segue.destination as? SimpleWebViewController {
             destinationVC.webViewKey = webViewKey
         }
+        
+        navigationItem.backBarButtonItem = backItem
+        navigationItem.title = "Zurück"
     }
     
     func registerSettingsBundle(){
