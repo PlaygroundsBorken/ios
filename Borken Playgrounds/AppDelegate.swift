@@ -11,32 +11,32 @@ import Firebase
 import Kingfisher
 import KingfisherWebP
 import CoreLocation
-import NotificationCenter
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let avatarSettings = "avatar_settings"
-    let playgroundNotifications = "playground_notifications"
     
     var window: UIWindow?
     var user: User? = nil
     var selectedPlaygroundElements: [PlaygroundElement] = []
     var remoteConfig: RemoteConfig? = nil
-    var notifications: PlaygroundNotifications? = nil
     var avatars: AvatarSettings? = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         self.remoteConfig = RemoteConfig.remoteConfig()
-        self.remoteConfig?.configSettings = RemoteConfigSettings(developerModeEnabled: true)
+        self.remoteConfig?.configSettings = RemoteConfigSettings()
         self.remoteConfig?.setDefaults(fromPlist: "RemoteConfigDefaults")
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
         
-        loadUser()
-        fetchRemoteConfig()
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            self.loadUser()
+            self.fetchRemoteConfig()
+        }
         
         return true
     }
@@ -75,11 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Config fetched!")
                 self.remoteConfig?.activateFetched()
                 
-                if let texts = self.loadNotificationTexts() {
-                    
-                    self.notifications = PlaygroundNotifications.tryParse(json: texts)
-                }
-                
                 if let avatar = self.loadAvatarSettings() {
                     
                     self.avatars = AvatarSettings.tryParse(json: avatar)
@@ -90,11 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error: \(error?.localizedDescription ?? "No error available.")")
             }
         }
-    }
-    
-    func loadNotificationTexts() -> String? {
-        
-        return self.remoteConfig?[self.playgroundNotifications].stringValue
     }
     
     func loadAvatarSettings() -> String? {

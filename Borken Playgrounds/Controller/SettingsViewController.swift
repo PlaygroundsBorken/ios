@@ -15,11 +15,11 @@ import Carte
 class SettingsViewController: QuickTableViewController {
     
     var webViewKey = "privacy_policy"
+    var webViewTitle = "Datenschutz"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerSettingsBundle()
-        NotificationCenter.default.addObserver(self, selector: #selector(SettingsViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
         tableContents = [
             
@@ -29,7 +29,6 @@ class SettingsViewController: QuickTableViewController {
             
             Section(title: "Allgemein", rows: [
                 TapActionRow(text: "In Zusammenarbeit mit", action: { [weak self] in self?.showAlert($0) }),
-                TapActionRow(text: "OpenSource Lizenzen", action: { [weak self] in self?.showAlert($0) }),
                 TapActionRow(text: "Impressum", action: { [weak self] in self?.showAlert($0) }),
                 TapActionRow(text: "Datenschutz", action: { [weak self] in self?.showAlert($0) })
                 ]),
@@ -48,30 +47,26 @@ class SettingsViewController: QuickTableViewController {
         
         if sender.text == "Impressum" {
             webViewKey = "impressum"
+            webViewTitle = "Impressum"
             performSegue(withIdentifier: "showWebView", sender: nil)
         }
         
         if sender.text == "Datenschutz" {
             webViewKey = "privacy_policy"
+            webViewTitle = "Datenschutz"
             performSegue(withIdentifier: "showWebView", sender: nil)
-        }
-        
-        if sender.text == "OpenSource Lizenzen" {
-            let carteViewController = CarteViewController()
-            self.navigationController?.pushViewController(carteViewController, animated:true)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let backItem = UIBarButtonItem()
-        backItem.title = "Zurück"
-        if let destinationVC = segue.destination as? SimpleWebViewController {
-            destinationVC.webViewKey = webViewKey
+        if let navVC = segue.destination as? UINavigationController {
+            
+            if let destinationVC = navVC.rootViewController as? SimpleWebViewController {
+                destinationVC.webViewKey = webViewKey
+                navVC.rootViewController?.navigationItem.title = webViewTitle
+            }
         }
-        
-        navigationItem.backBarButtonItem = backItem
-        navigationItem.title = "Zurück"
     }
     
     func registerSettingsBundle(){
@@ -87,9 +82,5 @@ class SettingsViewController: QuickTableViewController {
         else {
             self.view.backgroundColor = UIColor.green
         }
-    }
-    
-    deinit { //Not needed for iOS9 and above. ARC deals with the observer in higher versions.
-        NotificationCenter.default.removeObserver(self)
     }
 }

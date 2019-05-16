@@ -28,10 +28,6 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     
-    @IBAction func backButtonClicked(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     let columnLayout = ColumnFlowLayout(
         cellsPerRow: 4,
         minimumInteritemSpacing: 10,
@@ -39,6 +35,14 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     )
     
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem){
+        
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
     fileprivate func updateButtons() {
         self.upVoteButton.tintColor = defaultButtonColor
         self.downVoteButton.tintColor = defaultButtonColor
@@ -219,7 +223,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     @IBAction func addRemark(_ sender: Any) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Spielplatz kommentieren", message: "Hinterlasse doch einen Kommentar zum Spielplatz. Keine Angst die Kommentare kann kein anderer sehen, aber wir schauen uns diese an und wenn reparieren Geräte falls Sie kaputt sind. Wir freuen uns aber auch über Lob ;-)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Spielplatz kommentieren", message: "Hinterlasse doch einen Kommentar zum Spielplatz. Keine Angst die Kommentare kann kein anderer sehen, aber wir schauen uns diese an und reparieren Geräte falls Sie kaputt sind. Wir freuen uns aber auch über Lob ;-)", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in

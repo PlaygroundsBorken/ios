@@ -19,6 +19,13 @@ class SimpleWebViewController: UIViewController {
         loadHTMLStringImage()
     }
     
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
     func loadHTMLStringImage() -> Void {
         
         if let key = webViewKey {

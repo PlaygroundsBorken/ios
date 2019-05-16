@@ -16,6 +16,13 @@ class CollaborationController: UIViewController {
     @IBOutlet var jugendwerk: UIImageView!
     @IBOutlet var lwl: UIImageView!
     @IBOutlet var borken: UIImageView!
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
     override func viewDidLoad() {
         

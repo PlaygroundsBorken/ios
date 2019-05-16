@@ -16,6 +16,28 @@ class AvatarViewController: UIViewController {
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var avatarWrapper: UIStackView!
 
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let avatarUrl = appDelegate.avatars?.createAvatarUrl() {
+            
+            appDelegate.user?.avatarUrl = avatarUrl
+            appDelegate.user?.save()
+        }
+        
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
     let avatarImageSteps = [1:1,2:2,3:3,5:4,8:5,11:6,15:7,21:8,25:9]
     var showAmountOfWrapper = 1
     var pickerToAvatarSetting: [UIPickerView: AvatarSetting] = [UIPickerView: AvatarSetting]()
@@ -146,11 +168,7 @@ extension AvatarViewController: UIPickerViewDelegate, UIPickerViewDataSource, UI
          
             let url = URL(string: avatarUrl)
             self.avatarImageView.kf.setImage(with: url)
-            
-            appDelegate.user?.avatarUrl = avatarUrl
-            appDelegate.user?.save()
         }
-        
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

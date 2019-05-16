@@ -19,14 +19,26 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>6</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoidGJ1bmluZyIsImEiOiJjam4zOW1kMm01M3dnM3JxYzJlbDhla3JoIn0.XAa1iiVT8uEelBCDqnjbdA</string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSAppleMusicUsageDescription</key>
 	<string>Your location is required for xyz benefits for you</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Damit Du weißt wie es zum nächsten Spielplatz geht brauchen wir deine Position.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Damit Du weißt wie es zum nächsten Spielplatz geht brauchen wir deine Position.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Your location is required for xyz benefits for you</string>
 	<key>UIAppFonts</key>
 	<array>

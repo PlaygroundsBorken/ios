@@ -12,7 +12,6 @@ import Firebase
 import Kingfisher
 import SparrowKit
 import SPPermission
-import UserNotifications
 
 class MapboxViewController: UIViewController, MGLMapViewDelegate {
     
@@ -53,34 +52,15 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                 }
             }
         }
-        
-        let visitedPlaygroundNotificationCategory = UNNotificationCategory(identifier: "visitedPlaygroundNotification", actions: [], intentIdentifiers: [], options: [])
-        // #1.2 - Register the notification type.
-        UNUserNotificationCenter.current().setNotificationCategories([visitedPlaygroundNotificationCategory])
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let isAllowedLocationWhenInUse = SPPermission.isAllowed(.locationWhenInUse)
-        let isAllowedNotification = SPPermission.isAllowed(.notification)
         
-        if (!isAllowedNotification && !isAllowedLocationWhenInUse) {
-            SPPermission.Dialog.request(with: [.locationWhenInUse, .notification], on: self)
-        } else if (!isAllowedNotification) {
-            SPPermission.Dialog.request(with: [.notification], on: self)
-            SPPermission.request(.notification, with: {
-                // Callback
-            })
-        } else if (!isAllowedLocationWhenInUse) {
+        if (!isAllowedLocationWhenInUse) {
             SPPermission.Dialog.request(with: [.locationWhenInUse], on: self)
-            SPPermission.request(.locationWhenInUse, with: {
-                
-                self.locationManager?.startUpdatingLocation()
-            })
         } else {
-            SPPermission.request(.notification, with: {
-                // Callback
-            })
             SPPermission.request(.locationWhenInUse, with: {
                 
                 self.locationManager?.startUpdatingLocation()
@@ -242,9 +222,12 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let viewController = segue.destination as? PlaygroundViewController {
-            
-            viewController.playgroundId = self.selectedPlayground ?? ""
+        if let viewController = segue.destination as? UINavigationController {
+        
+            if let rootViewController = viewController.rootViewController as? PlaygroundViewController {
+                
+                rootViewController.playgroundId = self.selectedPlayground ?? ""
+            }
         }
     }
     
@@ -283,21 +266,6 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                     if (!user.visitedPlaygrounds.contains(playground.id)) {
                         user.visitedPlaygrounds.append(playground.id)
                         let visitedPlaygroundsByUser = user.visitedPlaygrounds.count
-                        let firstNotification = appDelegate.notifications?.visitedPlaygroundsNotifications.first(where: { (notification) -> Bool in
-                            return notification.visitedPlaygrounds == visitedPlaygroundsByUser
-                        })
-                        
-                        if let notification = firstNotification {
-                            let content = UNMutableNotificationContent()
-                            content.categoryIdentifier = "visitedPlaygroundNotification"
-                            content.title = notification.title
-                            content.body = notification.text
-                            content.sound = UNNotificationSound.default
-                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-                            let uuidString = UUID().uuidString
-                            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                        }
                         user.save()
                     }
                 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2uN-V6-7jE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ox5-bg-7NY">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,32 +15,19 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="gEx-ix-KAJ">
-            <objects>
-                <navigationController id="2uN-V6-7jE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="Back" id="YH0-vG-sUy">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ox5-bg-7NY" kind="relationship" relationship="rootViewController" id="0kP-I7-ts0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Voj-SW-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1471" y="-325"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="r8u-Iu-DHK">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ox5-bg-7NY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="hKs-cp-S1K"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CrA-fb-t86">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="fill" id="CrA-fb-t86">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="IWz-LV-T7f" kind="relationship" relationship="viewControllers" id="Nak-Rv-81U"/>
@@ -50,17 +37,17 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4W-cc-s9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="20.380434782608699"/>
+            <point key="canvasLocation" x="-1761" y="-49"/>
         </scene>
         <!--PlaygroundElements-->
         <scene sceneID="B3R-Ih-RtQ">
             <objects>
                 <collectionViewController id="Nsr-hw-5Lk" userLabel="PlaygroundElements" customClass="PlaygroundElementViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vc9-yD-n0M">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" id="vc9-yD-n0M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a10-2b-Cg9">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="a10-2b-Cg9">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -68,7 +55,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playgroundElementViewCell" id="CU8-f4-m44" customClass="PlaygroundElementViewCell" customModule="Borken_Playgrounds" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="88" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -95,20 +82,27 @@
                             <outlet property="delegate" destination="Nsr-hw-5Lk" id="OjR-lX-ap6"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Filtern" image="sort" landscapeImage="sort" largeContentSizeImage="sort" selectedImage="sort" id="O1h-CX-Pz9">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                    <tabBarItem key="tabBarItem" title="" image="sort" landscapeImage="sort" largeContentSizeImage="sort" selectedImage="sort" id="O1h-CX-Pz9">
+                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="-9"/>
+                        <color key="badgeColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Spielgeräte" id="leO-kj-LOB">
-                        <barButtonItem key="backBarButtonItem" title="Übernehmen" id="DhA-sR-m6H"/>
-                        <barButtonItem key="rightBarButtonItem" title="Übernehmen" id="D7Y-Kx-eF9"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DhA-sR-m6H"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="IE6-gj-zqZ">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="D7Y-Kx-eF9">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="playgroundElementCollectionView" destination="vc9-yD-n0M" id="Qfy-iK-ulG"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfI-Dy-HFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515.9420289855075" y="-784.23913043478262"/>
+            <point key="canvasLocation" x="1516" y="-1000"/>
         </scene>
         <!--Avatar-->
         <scene sceneID="HYz-mM-J02">
@@ -130,6 +124,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ybh-9I-sfO"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Avatar ändern" id="ME3-mD-6Wn">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="PMG-xA-tol"/>
+                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="rOW-fT-bFN">
+                            <connections>
+                                <action selector="backButtonClicked:" destination="oK6-CS-tGA" id="4ZJ-ah-IR3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="IUa-yR-fkZ">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="oK6-CS-tGA" id="1yi-id-bmN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="avatarImageView" destination="4gs-U7-wHp" id="bOY-Hp-kPj"/>
                         <outlet property="avatarWrapper" destination="qg4-Ud-Ucy" id="BRz-8w-Q5A"/>
@@ -137,7 +145,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGb-2g-5CM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3349" y="-887"/>
+            <point key="canvasLocation" x="4070" y="775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2LB-sh-u1C">
+            <objects>
+                <navigationController id="02v-3z-uEo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n3v-gZ-lba">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1U4-y3-mS5" kind="relationship" relationship="rootViewController" id="r6F-QY-wW5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAf-xM-MjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="1546"/>
         </scene>
         <!--Zusammenarbeit-->
         <scene sceneID="B3U-mt-If2">
@@ -147,15 +171,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_jugendwerk" translatesAutoresizingMaskIntoConstraints="NO" id="qtR-WP-Q6s">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_jugendwerk" translatesAutoresizingMaskIntoConstraints="NO" id="qtR-WP-Q6s">
                                 <rect key="frame" x="87" y="88" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_borken" translatesAutoresizingMaskIntoConstraints="NO" id="djt-gi-lQO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_borken" translatesAutoresizingMaskIntoConstraints="NO" id="djt-gi-lQO">
                                 <rect key="frame" x="87" y="612" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_lwl" translatesAutoresizingMaskIntoConstraints="NO" id="JTX-SJ-tr2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_lwl" translatesAutoresizingMaskIntoConstraints="NO" id="JTX-SJ-tr2">
                                 <rect key="frame" x="87" y="342" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -163,6 +187,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rf0-pF-1X3"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="In Zusammenarbeit mit" id="rV8-QW-gWa">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="3qh-nJ-mAB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="8G5-wX-YTU">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonClicked:" destination="1U4-y3-mS5" id="sfd-AP-ySZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="borken" destination="djt-gi-lQO" id="6hr-k3-yZY"/>
                         <outlet property="jugendwerk" destination="qtR-WP-Q6s" id="ylC-Mk-2uo"/>
@@ -171,9 +206,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcJ-CX-EEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3528" y="871"/>
+            <point key="canvasLocation" x="4070" y="1546"/>
         </scene>
-        <!--Simple Web View Controller-->
+        <!--Title-->
         <scene sceneID="vhY-tQ-n2o">
             <objects>
                 <viewController id="7ro-Z1-5M2" customClass="SimpleWebViewController" customModule="Borken_Playgrounds" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,13 +229,53 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kY8-XI-PY0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Wma-bd-KZt">
+                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="QuI-hn-4m6">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonClicked:" destination="7ro-Z1-5M2" id="umC-Gk-mHP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="dvJ-RM-TB0" id="jet-0I-lnV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsL-kO-b6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3347.826086956522" y="1785.2678571428571"/>
+            <point key="canvasLocation" x="4070" y="3041"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UCp-lc-zyI">
+            <objects>
+                <navigationController id="88p-Zw-qFd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e5Q-72-p3r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7ro-Z1-5M2" kind="relationship" relationship="rootViewController" id="MoG-tO-raD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ofw-uB-kH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="3041"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uvj-e1-Ps3">
+            <objects>
+                <navigationController id="tHY-mo-2Jk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIN-eM-7zA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wdq-9I-icF" kind="relationship" relationship="rootViewController" id="qtf-dS-hI3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nvb-fQ-oF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="2283"/>
         </scene>
         <!--OpenSource Lizenzen-->
         <scene sceneID="9Gu-p2-Wrj">
@@ -223,10 +298,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TCq-GP-bKa"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Open Source" id="pho-Tt-Bo3">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="kW4-eh-CXd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="S9P-B2-3e2">
+                            <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVd-yC-1fI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4562" y="1425"/>
+            <point key="canvasLocation" x="4070" y="2283"/>
         </scene>
         <!--Mapbox-->
         <scene sceneID="OLF-rk-ihu">
@@ -254,18 +335,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ty8-CJ-mov"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Karte" image="map-icon" landscapeImage="map-icon" largeContentSizeImage="map-icon" selectedImage="map-icon" id="Tqe-j8-LIj">
-                        <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="3"/>
+                    <tabBarItem key="tabBarItem" title="" image="map-icon" landscapeImage="map-icon" largeContentSizeImage="map-icon" selectedImage="map-icon" id="Tqe-j8-LIj">
+                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="-9"/>
+                        <color key="badgeColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="mapboxView" destination="wF0-wS-K0w" id="3KP-yc-PdS"/>
-                        <segue destination="zXE-DY-roo" kind="show" identifier="ShowPlayground" id="hne-mu-PwQ"/>
-                        <segue destination="oK6-CS-tGA" kind="show" identifier="ShowAvatarView" id="j9Y-UI-cse"/>
+                        <segue destination="3xs-dw-HQQ" kind="show" identifier="ShowPlayground" id="3Z5-xz-UDA"/>
+                        <segue destination="Pa6-Rd-L4s" kind="show" identifier="ShowAvatarView" id="f0e-FM-zEN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tV-z4-rNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.75362318840587" y="19.565217391304348"/>
+            <point key="canvasLocation" x="1516" y="-143"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="ch3-Su-vYG">
@@ -277,17 +359,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kwt-q1-TKb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mehr" image="more" landscapeImage="more" largeContentSizeImage="more" selectedImage="more" id="O25-ub-eNe"/>
+                    <tabBarItem key="tabBarItem" title="" image="more" landscapeImage="more" largeContentSizeImage="more" selectedImage="more" id="O25-ub-eNe">
+                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="-9"/>
+                        <color key="badgeColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
-                        <segue destination="oK6-CS-tGA" kind="show" identifier="ShowAvatarView" id="BoD-IC-X8n"/>
-                        <segue destination="1U4-y3-mS5" kind="show" identifier="madeWith" id="3fY-0d-8JA"/>
-                        <segue destination="7ro-Z1-5M2" kind="show" identifier="showWebView" id="ecQ-Xb-AQf"/>
-                        <segue destination="Wdq-9I-icF" kind="show" identifier="showOpenSource" id="fsr-0k-Wof"/>
+                        <segue destination="Pa6-Rd-L4s" kind="show" identifier="ShowAvatarView" id="gNH-bY-ZcM"/>
+                        <segue destination="02v-3z-uEo" kind="show" identifier="madeWith" id="VYh-j6-0ct"/>
+                        <segue destination="tHY-mo-2Jk" kind="show" identifier="showOpenSource" id="KMt-x9-YQ1"/>
+                        <segue destination="88p-Zw-qFd" kind="show" identifier="showWebView" id="Je0-xb-d0M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xP5-uB-jaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="850"/>
+            <point key="canvasLocation" x="1516" y="776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P9v-Tv-GOH">
+            <objects>
+                <navigationController id="3xs-dw-HQQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fir-nj-Asl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zXE-DY-roo" kind="relationship" relationship="rootViewController" id="sGC-zJ-o5V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JY-zn-WIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="-143"/>
         </scene>
         <!--Playground-->
         <scene sceneID="9Ny-FF-o8e">
@@ -309,7 +410,7 @@
                                 <rect key="frame" x="0.0" y="315" width="414" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="KidsPlain" family="Kids" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="KidsPlain" family="Kids" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -385,13 +486,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jqf-QI-DPU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="fGZ-Rw-KbU">
+                    <navigationItem key="navigationItem" title="Spielplatz" id="fGZ-Rw-KbU">
                         <barButtonItem key="backBarButtonItem" title="Back" id="M09-Fa-V6R"/>
                         <barButtonItem key="leftBarButtonItem" image="Back" id="Hew-Pu-29g">
                             <inset key="imageInsets" minX="-14" minY="1" maxX="0.0" maxY="-5"/>
                             <color key="tintColor" red="0.24058049917221069" green="0.55343693494796753" blue="0.20234209299087524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="backButtonClicked:" destination="zXE-DY-roo" id="76a-kB-h4v"/>
+                                <action selector="backButtonClicked:" destination="zXE-DY-roo" id="43q-th-uJ3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -406,14 +507,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDX-Dm-3N5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3002.898550724638" y="19.419642857142858"/>
+            <point key="canvasLocation" x="4071" y="-142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HZh-ux-HiE">
+            <objects>
+                <navigationController id="Pa6-Rd-L4s" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hxy-XO-QhU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oK6-CS-tGA" kind="relationship" relationship="rootViewController" id="Npx-Og-3Mr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICd-0x-gUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="775"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="48" height="48"/>
-        <image name="Note" width="60" height="60"/>
-        <image name="VoteDown" width="75" height="75"/>
-        <image name="VoteUp" width="75" height="75"/>
+        <image name="Back" width="64" height="64"/>
+        <image name="Note" width="40" height="40"/>
+        <image name="VoteDown" width="50" height="50"/>
+        <image name="VoteUp" width="50" height="50"/>
         <image name="logo_borken" width="1266" height="1334"/>
         <image name="logo_jugendwerk" width="3508" height="2479"/>
         <image name="logo_lwl" width="1696" height="1054"/>
@@ -422,6 +539,7 @@
         <image name="sort" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BoD-IC-X8n"/>
+        <segue reference="gNH-bY-ZcM"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.32097825407981873" green="0.68223088979721069" blue="0.2776648998260498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
