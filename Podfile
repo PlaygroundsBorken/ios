@@ -22,8 +22,7 @@ target 'Borken Playgrounds' do
   pod 'SnapKit'
   pod 'SparrowKit'
   pod 'QuickTableViewController'
-  pod 'Carte'
-  
+    
   target 'Borken PlaygroundsTests' do
     inherit! :search_paths
     # Pods for testing

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import SnapKit
 import QuickTableViewController
-import Carte
 
 class SettingsViewController: QuickTableViewController {
     

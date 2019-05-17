@@ -25,9 +25,11 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     var defaultButtonColor: UIColor? = nil
     @IBOutlet var descriptions: UITextView!
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     
+    @IBOutlet var headline: UITextField!
     let columnLayout = ColumnFlowLayout(
         cellsPerRow: 4,
         minimumInteritemSpacing: 10,
@@ -132,18 +134,46 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func setContraints() {
         
+        scrollView.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(imageSlideshow.snp.bottom).offset(12)
+            make.right.equalTo(view).offset(-12)
+            make.left.equalTo(view).offset(12)
+            
+            if (toolbar.isHidden) {
+                make.bottom.equalTo(view)
+            } else {
+                make.bottom.equalTo(toolbar.snp.top)
+            }
+        }
+        headline.snp.makeConstraints { (make) in
+            make.top.equalTo(scrollView)
+            make.right.equalTo(view).offset(-12)
+            make.left.equalTo(view).offset(12)
+            make.bottom.equalTo(descriptions.snp.top)
+        }
+        
         descriptions.snp.makeConstraints { (make) in
-            make.top.equalTo(imageSlideshow.snp.bottom)
-            make.left.right.equalTo(view)
-            make.bottom.equalTo(playgroundElementsCollectionView.snp.top)
-            make.height.lessThanOrEqualTo(400)
+            make.top.equalTo(headline.snp.bottom)
+            make.right.equalTo(view).offset(-12)
+            make.left.equalTo(view).offset(12)
+            make.height.greaterThanOrEqualTo(100)
         }
         
         playgroundElementsCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(descriptions.snp.bottom)
-            make.left.right.equalTo(view)
-            make.height.lessThanOrEqualTo(240)
-            make.bottom.equalTo(toolbar.snp.top)
+            make.right.equalTo(view).offset(-12)
+            make.left.equalTo(view).offset(12)
+            make.height.greaterThanOrEqualTo(100)
+        }
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        descriptions.snp.makeConstraints { (make) in
+            
+            make.height.equalTo(descriptions.bounds.size.height + 40)
         }
     }
     
@@ -157,6 +187,10 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         
         viewCell.displayContent(playgroundElement: self.playgroundElements[indexPath.row])
         
+        playgroundElementsCollectionView.snp.makeConstraints { (make) in
+            make.height.equalTo(playgroundElementsCollectionView.collectionViewLayout.collectionViewContentSize.height + 20)
+        }
+        
         return viewCell
     }
     
@@ -169,7 +203,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     func initPlayground(playground: Playground) {
         
         self.selectedPlayground = playground
-        self.title = playground.name
+        self.headline.text = playground.name
         
         let images = playground.images.map { (String) -> KingfisherSource in
             KingfisherSource(urlString: String)!
