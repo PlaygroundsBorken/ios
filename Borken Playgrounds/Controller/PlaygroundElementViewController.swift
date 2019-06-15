@@ -11,7 +11,15 @@ import UIKit
 import Firebase
 
 class PlaygroundElementViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource{
+    @IBOutlet var collectionView: UICollectionView!
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
     let columnLayout = ColumnFlowLayout(
         cellsPerRow: 2,
         minimumInteritemSpacing: 10,
@@ -31,7 +39,12 @@ class PlaygroundElementViewController: UIViewController , UICollectionViewDelega
         let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "playgroundElementViewCell", for: indexPath) as! PlaygroundElementViewCell
         
         viewCell.displayContent(playgroundElement: self.playgroundElements[indexPath.row])
-        viewCell.isSelected = playgroundElementIsSelected(playgroundElement: self.playgroundElements[indexPath.row])
+        if playgroundElementIsSelected(playgroundElement: self.playgroundElements[indexPath.row]) {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+            
+            viewCell.isSelected = true
+            viewCell.layoutIfNeeded()
+        }
         
         return viewCell
     }

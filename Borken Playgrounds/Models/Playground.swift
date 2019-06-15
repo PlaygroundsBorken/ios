@@ -13,6 +13,7 @@ class Playground {
     
     let lat: Double?
     let lng: Double?
+    let rating: Double?
     let name: String
     let id: String
     var images: [String]
@@ -27,6 +28,7 @@ class Playground {
         
         self.lat = Double(dictionary["lat"] as! String)
         self.lng = Double(dictionary["lng"] as! String)
+        self.rating = dictionary["rating"] as? Double
         self.description = (dictionary["description"] as? [String: Any])?["html"] as? String
         self.description2 = (dictionary["description2"] as? [String: Any])?["html"] as? String
         

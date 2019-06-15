@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 import SnapKit
 import SparrowKit
+import Eureka
 
 class AvatarViewController: UIViewController {
     
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var avatarImageView: UIImageView!
-    @IBOutlet var avatarWrapper: UIStackView!
-
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         let navigationController = self.presentingViewController as? UINavigationController
         
@@ -38,6 +39,17 @@ class AvatarViewController: UIViewController {
             let _ = navigationController?.popToRootViewController(animated: true)
         }
     }
+    let optionsHeadlines = [
+        "topType": "Kopfbedeckung",
+        "accessoriesType": "Accessoire",
+        "hairColor": "Haarfarbe",
+        "facialHairType": "Gesichtsbeharung",
+        "clotheType": "Bekleidung",
+        "eyeType": "Augen",
+        "eyebrowType": "Augenbrauen",
+        "mouthType": "Mund",
+        "skinColor": "Hautfarbe",
+    ]
     let avatarImageSteps = [1:1,2:2,3:3,5:4,8:5,11:6,15:7,21:8,25:9]
     var showAmountOfWrapper = 1
     var pickerToAvatarSetting: [UIPickerView: AvatarSetting] = [UIPickerView: AvatarSetting]()
@@ -53,7 +65,11 @@ class AvatarViewController: UIViewController {
             self.avatarImageView.kf.setImage(with: url)
             
             self.avatarImageView.snp.makeConstraints { (make) in
-                make.top.equalTo(self.safeArea.top).offset(navigationBarHeight + UIApplication.shared.statusBarFrame.size.height)
+                if #available(iOS 11.0, *) {
+                    make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+                } else {
+                    make.top.equalTo(view)
+                }
                 make.centerX.equalTo(self.view)
                 make.width.equalTo(200)
                 make.height.equalTo(200)
@@ -76,104 +92,70 @@ class AvatarViewController: UIViewController {
                 showAmountOfWrapper = appDelegate.avatars?.avatarSetting.count ?? 1
             }
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        avatarWrapper.snp.makeConstraints { (make) in
-            make.top.equalTo(avatarImageView.snp.bottom)
-            make.bottom.left.right.equalTo(view)
-        }
-        
-        
-        var lastPickerText: UITextField?
-        appDelegate.avatars?.avatarSetting.prefix(showAmountOfWrapper).forEach({ (avatarSetting) in
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        switch segue.destination {
             
-            let pickerView = UIPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: 216)))
-            
-            pickerView.dataSource = self
-            pickerView.delegate = self
-            pickerView.isHidden = true
-            
-            pickerToAvatarSetting[pickerView] = avatarSetting
-            avatarWrapper.addSubview(pickerView)
-            
-            pickerView.snp.makeConstraints({ (make) in
-                make.left.right.bottom.equalTo(avatarWrapper)
-            })
-            
-            let pickerTextField = UITextField(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.size.width, height: 216)))
-            pickerTextField.borderStyle = UITextField.BorderStyle.roundedRect
-            let padding = UIEdgeInsets(top: 8, left: 16, bottom: 6, right: 16)
-            pickerTextField.bounds.inset(by: padding)
-            if let selectedOption = avatarSetting.options.first(where: { (part) -> Bool in
-                return part.selected != nil && part.selected!
-            }) {
-                pickerTextField.text = selectedOption.value
-            } else {
-                pickerTextField.text = avatarSetting.body_part
-            }
-            pickerTextField.delegate = self
-            
-            avatarWrapper.addSubview(pickerTextField)
-            
-            pickerToPickerText[pickerView] = pickerTextField
-            pickerTextToPicker[pickerTextField] = pickerView
-            pickerTextField.snp.makeConstraints({ (make) in
-                make.left.right.equalTo(avatarWrapper).inset(16)
-            })
-            if (lastPickerText != nil) {
+        case let formViewController as FormViewController:
+            let rows = appDelegate.avatars?.avatarSetting.prefix(showAmountOfWrapper).map({ (avatarSetting) -> ActionSheetRow<String> in
+                var selected: String = ""
+                if let selectedOption = avatarSetting.options.first(where: { (part) -> Bool in
+                    return part.selected != nil && part.selected!
+                }) {
+                    selected = selectedOption.value
+                } else {
+                    selected = ""
+                }
                 
-                pickerTextField.snp.makeConstraints({ (make) in
-                    make.top.equalTo(lastPickerText!.snp.bottom).offset(10)
-                })
-            } else {
+                
+                return ActionSheetRow<String>() {
+                    $0.title = String(describing: optionsHeadlines[avatarSetting.body_part]!)
+                    $0.selectorTitle = "Wähle \(String(describing: optionsHeadlines[avatarSetting.body_part]!)) aus"
+                    $0.options = avatarSetting.options.map({ (part) -> String in
+                        part.value
+                    })
+                    $0.value = selected
+                    
+                    }.onChange({ (row) in
+                    
+                        let key = self.optionsHeadlines.swapKeyValues()[row.title!]
+                        appDelegate.avatars?.selectBodyPartOption(bodyPart: key, option: row.value)
+                        
+                        if let avatarUrl = appDelegate.avatars?.createAvatarUrl() {
+                            
+                            let url = URL(string: avatarUrl)
+                            self.avatarImageView.kf.setImage(with: url)
+                        }
+                    })
+            })
             
-                pickerTextField.snp.makeConstraints({ (make) in
-                    make.top.equalTo(avatarImageView.snp.bottom).offset(10)
+            if ((rows) != nil) {
+                let section = Section()
+                rows?.forEach({ (row) in
+                    section <<< row
                 })
+                formViewController.form +++ section
             }
-            lastPickerText = pickerTextField
-        })
+            formViewController.viewDidLoad()
+            
+        default:
+            break
+        }
     }
 }
 
-extension AvatarViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+extension Dictionary where Value : Hashable {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerToAvatarSetting[pickerView]?.options.count ?? 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerToAvatarSetting[pickerView]?.options[row].value
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        let avatarSetting = pickerToAvatarSetting[pickerView]
-        pickerToPickerText[pickerView]?.text = avatarSetting?.options[row].value;
-        
-        pickerToPickerText.forEach { (key, value) in
-            key.isHidden = true
-            value.isHidden = false
+    func swapKeyValues() -> [Value : Key] {
+        assert(Set(self.values).count == self.keys.count, "Values must be unique")
+        var newDict = [Value : Key]()
+        for (key, value) in self {
+            newDict[value] = key
         }
-        
-        pickerToAvatarSetting[pickerView]?.options[row].selected = true
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.avatars?.selectBodyPartOption(bodyPart: avatarSetting?.body_part, option: avatarSetting?.options[row].id)
-        
-        if let avatarUrl = appDelegate.avatars?.createAvatarUrl() {
-         
-            let url = URL(string: avatarUrl)
-            self.avatarImageView.kf.setImage(with: url)
-        }
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
-        pickerTextToPicker[textField]?.isHidden = false
-        return false
+        return newDict
     }
 }

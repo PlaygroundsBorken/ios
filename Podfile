@@ -15,24 +15,16 @@ target 'Borken Playgrounds' do
   pod 'Firebase/RemoteConfig'
   pod 'Kingfisher'
   pod 'Mapbox-iOS-SDK'
-  pod 'SPPermission'
-  pod "ImageSlideshow/Kingfisher"
-  pod "KingfisherWebP"
-  pod "SkeletonView"
+  pod 'SPPermission/Location'
+  pod 'ImageSlideshow/Kingfisher'
+  pod 'KingfisherWebP'
+  pod 'SkeletonView'
   pod 'SnapKit'
   pod 'SparrowKit'
   pod 'QuickTableViewController'
-    
-  target 'Borken PlaygroundsTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Borken PlaygroundsUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-    
+  pod 'CircleMenu'
+  pod 'Cosmos'
+  pod 'Eureka'
 end
 
 post_install do |installer|
@@ -41,6 +33,4 @@ post_install do |installer|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
     end
   end
-  pods_dir = File.dirname(installer.pods_project.path)
-  at_exit { `ruby #{pods_dir}/Carte/Sources/Carte/carte.rb configure` }
 end

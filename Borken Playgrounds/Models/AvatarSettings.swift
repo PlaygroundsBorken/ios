@@ -66,7 +66,7 @@ extension AvatarSettings {
                 avatarSetting.first { (setting) -> Bool in
                     setting.body_part == selectedBodyPart
                     }?.options.forEach({ (part) in
-                        part.selected = part.id == selectedOption
+                        part.selected = part.value == selectedOption
                     })
             }
         }

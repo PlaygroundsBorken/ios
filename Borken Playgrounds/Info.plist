@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
@@ -40,6 +40,8 @@
 	<string>Your location is required for xyz benefits for you</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Your location is required for xyz benefits for you</string>
+	<key>SPPERMISSION_LOCATION</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Kidsn.ttf</string>
@@ -47,7 +49,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

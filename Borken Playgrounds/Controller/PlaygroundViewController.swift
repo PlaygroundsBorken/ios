@@ -13,23 +13,25 @@ import Kingfisher
 import SkeletonView
 import SnapKit
 import CoreLocation
+import Cosmos
 
-class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PlaygroundViewController: UIViewController, UICollectionViewDelegate {
     
+    @IBOutlet var ratingBarWrapper: UIView!
+    @IBOutlet var ratingBar: CosmosView!
     @IBOutlet var downVoteButton: UIBarButtonItem!
     @IBOutlet var upVoteButton: UIBarButtonItem!
     @IBOutlet var playgroundElementsCollectionView: UICollectionView!
+    @IBOutlet var toolbar: UIToolbar!
+    @IBOutlet weak var imageSlideshow: ImageSlideshow!
+    
+    @IBOutlet var elementsHeaderView: PlaygroundHeaderView!
     var playgroundId: String  = ""
     var playgroundElements: [PlaygroundElement] = []
     var selectedPlayground: Playground? = nil
     var defaultButtonColor: UIColor? = nil
-    @IBOutlet var descriptions: UITextView!
+    var referenceHeadSize:CGFloat = 40.0
     
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var toolbar: UIToolbar!
-    @IBOutlet weak var imageSlideshow: ImageSlideshow!
-    
-    @IBOutlet var headline: UITextField!
     let columnLayout = ColumnFlowLayout(
         cellsPerRow: 4,
         minimumInteritemSpacing: 10,
@@ -75,6 +77,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                         (playgroundElement: PlaygroundElement) -> Void in
                         self.playgroundElements.append(playgroundElement)
                         self.playgroundElementsCollectionView.reloadData()
+                        self.updateViewConstraints()
                     })
                     if (playground != nil) {
                         self.initPlayground(playground: playground!)
@@ -103,7 +106,9 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         
         self.defaultButtonColor = upVoteButton.tintColor
         updateButtons()
+        
     }
+    
     
     private func checkIfControlsShouldBeShown() {
         
@@ -127,18 +132,43 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                         user.save()
                     }
                     toolbar.isHidden = false
+                    
+                    updateButtons()
                 }
             }
         }
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        view.setNeedsUpdateConstraints()
+    }
+    
     func setContraints() {
         
-        scrollView.snp.makeConstraints { (make) in
+        imageSlideshow.snp.makeConstraints { (make) in
             
-            make.top.equalTo(imageSlideshow.snp.bottom).offset(12)
+            make.top.left.equalTo(view)
+            if UIDevice.current.orientation.isLandscape {
+                make.right.equalTo(view.snp.centerX)
+            } else {
+                make.right.equalTo(view)
+            }
+            make.height.lessThanOrEqualTo(355)
+        }
+        
+        playgroundElementsCollectionView.snp.makeConstraints { (make) in
+            
             make.right.equalTo(view).offset(-12)
-            make.left.equalTo(view).offset(12)
+            if UIDevice.current.orientation.isLandscape {
+                make.top.equalTo(view)
+                make.left.equalTo(view.snp.centerX).offset(12)
+            } else {
+                make.left.equalTo(view).offset(12)
+                make.top.equalTo(imageSlideshow.snp.bottom)
+            }
+            
+            make.height.greaterThanOrEqualTo(100)
             
             if (toolbar.isHidden) {
                 make.bottom.equalTo(view)
@@ -146,52 +176,20 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
                 make.bottom.equalTo(toolbar.snp.top)
             }
         }
-        headline.snp.makeConstraints { (make) in
-            make.top.equalTo(scrollView)
-            make.right.equalTo(view).offset(-12)
-            make.left.equalTo(view).offset(12)
-            make.bottom.equalTo(descriptions.snp.top)
+        
+        ratingBarWrapper.snp.makeConstraints { (make) in
+            make.bottom.equalTo(imageSlideshow).offset(-40)
+            make.right.equalTo(imageSlideshow)
+            //make.height.equalTo(60)
         }
         
-        descriptions.snp.makeConstraints { (make) in
-            make.top.equalTo(headline.snp.bottom)
-            make.right.equalTo(view).offset(-12)
-            make.left.equalTo(view).offset(12)
-            make.height.greaterThanOrEqualTo(100)
+        ratingBar.snp.makeConstraints { (make) in
+            make.left.top.equalTo(ratingBarWrapper).offset(6)
+            make.right.equalTo(ratingBarWrapper).offset(-24)
+            make.bottom.equalTo(ratingBarWrapper).offset(-6)
         }
         
-        playgroundElementsCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(descriptions.snp.bottom)
-            make.right.equalTo(view).offset(-12)
-            make.left.equalTo(view).offset(12)
-            make.height.greaterThanOrEqualTo(100)
-        }
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        descriptions.snp.makeConstraints { (make) in
-            
-            make.height.equalTo(descriptions.bounds.size.height + 40)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return playgroundElements.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let viewCell = self.playgroundElementsCollectionView.dequeueReusableCell(withReuseIdentifier: "simplePlaygroundElementViewCell", for: indexPath) as! SimplePlaygroundElementViewCell
-        
-        viewCell.displayContent(playgroundElement: self.playgroundElements[indexPath.row])
-        
-        playgroundElementsCollectionView.snp.makeConstraints { (make) in
-            make.height.equalTo(playgroundElementsCollectionView.collectionViewLayout.collectionViewContentSize.height + 20)
-        }
-        
-        return viewCell
+        //ratingBar.bounds = ratingBar.frame.insetBy(dx: 10.0, dy: 10.0)
     }
     
     @objc func didTap() {
@@ -203,14 +201,13 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
     func initPlayground(playground: Playground) {
         
         self.selectedPlayground = playground
-        self.headline.text = playground.name
         
         let images = playground.images.map { (String) -> KingfisherSource in
             KingfisherSource(urlString: String)!
         }
         self.imageSlideshow.setImageInputs(images)
-        self.descriptions.text = playground.description?.htmlToString
-        self.descriptions.sizeToFit()
+        
+        self.ratingBar.rating = playground.rating ?? 1
         setContraints()
     }
     @IBAction func upVotePlayground(_ sender: Any) {
@@ -283,6 +280,65 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate, UICo
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: (collectionView.frame.size.width), height: referenceHeadSize)
+    }
+    
+}
+
+extension PlaygroundViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return playgroundElements.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let viewCell = self.playgroundElementsCollectionView.dequeueReusableCell(withReuseIdentifier: "simplePlaygroundElementViewCell", for: indexPath) as! SimplePlaygroundElementViewCell
+        
+        viewCell.displayContent(playgroundElement: self.playgroundElements[indexPath.row])
+        
+        return viewCell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        // 2
+        case UICollectionView.elementKindSectionHeader:
+            // 3
+            guard
+                let headerView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: "playgroundHeaderView",
+                    for: indexPath) as? PlaygroundHeaderView
+                else {
+                    fatalError("Invalid view type")
+            }
+            
+            headerView.playgroundHeadline.text = selectedPlayground?.name
+            headerView.playgroundDescription.text = selectedPlayground?.description?.htmlToString
+            headerView.playgroundDescription.sizeToFit()
+            
+            headerView.playgroundDescription.snp.makeConstraints { (make) in
+                make.top.equalTo(headerView.playgroundHeadline.snp.bottom).offset(12)
+                
+                let height = headerView.playgroundDescription.bounds.size.height + 40
+                make.height.equalTo(height)
+                
+                referenceHeadSize = height
+                
+                playgroundElementsCollectionView.layoutIfNeeded()
+            }
+            
+            return headerView
+        default:
+            // 4
+            fatalError("Unexpected element kind")
+        }
+    }
+
 }
 
 extension String {

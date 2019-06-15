@@ -16,6 +16,14 @@ class SettingsViewController: QuickTableViewController {
     var webViewKey = "privacy_policy"
     var webViewTitle = "Datenschutz"
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        let navigationController = self.presentingViewController as? UINavigationController
+        
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerSettingsBundle()
@@ -28,6 +36,7 @@ class SettingsViewController: QuickTableViewController {
             
             Section(title: "Allgemein", rows: [
                 TapActionRow(text: "In Zusammenarbeit mit", action: { [weak self] in self?.showAlert($0) }),
+                TapActionRow(text: "Du hast eine Beschwerde?", action: { [weak self] in self?.showAlert($0) }),
                 TapActionRow(text: "Impressum", action: { [weak self] in self?.showAlert($0) }),
                 TapActionRow(text: "Datenschutz", action: { [weak self] in self?.showAlert($0) })
                 ]),
@@ -42,6 +51,12 @@ class SettingsViewController: QuickTableViewController {
         
         if sender.text == "In Zusammenarbeit mit" {
             performSegue(withIdentifier: "madeWith", sender: nil)
+        }
+        
+        if sender.text == "Du hast eine Beschwerde?" {
+            if let url = URL(string: "https://www.borken.de/buergerservice/ideen-und-beschwerdemanagement/ideen-u-beschwerdemanagement.html") {
+                UIApplication.shared.open(url)
+            }
         }
         
         if sender.text == "Impressum" {

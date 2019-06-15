@@ -20,43 +20,23 @@
 		3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAAF217E36E7003F4BDE /* ViewController.swift */; };
 		3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB1217E36E7003F4BDE /* Main.storyboard */; };
 		3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3240CAB6217E36E9003F4BDE /* LaunchScreen.storyboard */; };
-		3240CAC3217E36E9003F4BDE /* Borken_PlaygroundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */; };
-		3240CACE217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */; };
 		3260345A223402ED009D75A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32603459223402ED009D75A4 /* User.swift */; };
 		3260345C2234244E009D75A4 /* AvatarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345B2234244E009D75A4 /* AvatarAnnotation.swift */; };
 		3260345E22342474009D75A4 /* CustomAvatarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */; };
+		3278E82122B153EE00299D0A /* PlaygroundHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278E82022B153EE00299D0A /* PlaygroundHeaderView.swift */; };
 		327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 327C98A321BAB85000F19F2C /* Kidsn.ttf */; };
 		328C2FA8223AC3C900206376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328C2FA7223AC3C900206376 /* Assets.xcassets */; };
 		328C2FAA223AC6D800206376 /* SimpleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */; };
+		32C5A06522B009A0003595D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C5A06422B009A0003595D8 /* GoogleService-Info.plist */; };
+		32C5A06722B00AB5003595D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5A06622B00AB5003595D8 /* SplashViewController.swift */; };
 		32C787FF223D05A70013961A /* CollaborationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C787FE223D05A70013961A /* CollaborationController.swift */; };
+		32E6DA5022AC44BD000DC076 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6DA4F22AC44BD000DC076 /* HelpViewController.swift */; };
 		32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */; };
 		32F1566622353B450035FA38 /* AvatarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566522353B450035FA38 /* AvatarSettings.swift */; };
 		32F15668223542C20035FA38 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F15667223542C20035FA38 /* SettingsViewController.swift */; };
-		32F1566A2235436A0035FA38 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32F156692235436A0035FA38 /* Settings.bundle */; };
-		32F1566D223543910035FA38 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566C223543910035FA38 /* SettingsBundleHelper.swift */; };
 		32F1566F223546580035FA38 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1566E223546580035FA38 /* AvatarViewController.swift */; };
-		32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */; };
-		4349A479AA43FEFB3AE347C1 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960B5B60F14254D38299AFF9 /* Pods_Borken_PlaygroundsTests.framework */; };
 		67132304228600BBF0C6F3CF /* Pods_Borken_Playgrounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5639CACA16FDC79D857206 /* Pods_Borken_Playgrounds.framework */; };
-		84526C52DB8CB366F7D65319 /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F04FA63C0D406B8BE6F46D /* Pods_Borken_PlaygroundsUITests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3240CABF217E36E9003F4BDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3240CAA2217E36E7003F4BDE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3240CAA9217E36E7003F4BDE;
-			remoteInfo = "Borken Playgrounds";
-		};
-		3240CACA217E36E9003F4BDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3240CAA2217E36E7003F4BDE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3240CAA9217E36E7003F4BDE;
-			remoteInfo = "Borken Playgrounds";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		08F04FA63C0D406B8BE6F46D /* Pods_Borken_PlaygroundsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_PlaygroundsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,26 +59,23 @@
 		3240CAB2217E36E7003F4BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3240CAB7217E36E9003F4BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3240CAB9217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borken PlaygroundsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borken_PlaygroundsTests.swift; sourceTree = "<group>"; };
-		3240CAC4217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borken PlaygroundsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borken_PlaygroundsUITests.swift; sourceTree = "<group>"; };
-		3240CACF217E36E9003F4BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32603459223402ED009D75A4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3260345B2234244E009D75A4 /* AvatarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnnotation.swift; sourceTree = "<group>"; };
 		3260345D22342474009D75A4 /* CustomAvatarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarAnnotationView.swift; sourceTree = "<group>"; };
+		3278E82022B153EE00299D0A /* PlaygroundHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundHeaderView.swift; sourceTree = "<group>"; };
 		327C98A321BAB85000F19F2C /* Kidsn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kidsn.ttf; sourceTree = "<group>"; };
 		328C2FA7223AC3C900206376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWebViewController.swift; sourceTree = "<group>"; };
+		32C5A06422B009A0003595D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32C5A06622B00AB5003595D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		32C5A06822B00C9F003595D8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		32C5A06922B00C9F003595D8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		32C787FE223D05A70013961A /* CollaborationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationController.swift; sourceTree = "<group>"; };
+		32E6DA4F22AC44BD000DC076 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		32F1566522353B450035FA38 /* AvatarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSettings.swift; sourceTree = "<group>"; };
 		32F15667223542C20035FA38 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		32F156692235436A0035FA38 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		32F1566C223543910035FA38 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		32F1566E223546580035FA38 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
-		32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A5639CACA16FDC79D857206 /* Pods_Borken_Playgrounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_Playgrounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		679F066DA2267DEA17145C30 /* Pods-Borken Playgrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Borken Playgrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds.release.xcconfig"; sourceTree = "<group>"; };
 		960B5B60F14254D38299AFF9 /* Pods_Borken_PlaygroundsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Borken_PlaygroundsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,22 +89,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67132304228600BBF0C6F3CF /* Pods_Borken_Playgrounds.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3240CABB217E36E9003F4BDE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4349A479AA43FEFB3AE347C1 /* Pods_Borken_PlaygroundsTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3240CAC6217E36E9003F4BDE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84526C52DB8CB366F7D65319 /* Pods_Borken_PlaygroundsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +127,8 @@
 				32F1566E223546580035FA38 /* AvatarViewController.swift */,
 				328C2FA9223AC6D800206376 /* SimpleWebViewController.swift */,
 				32C787FE223D05A70013961A /* CollaborationController.swift */,
+				32E6DA4F22AC44BD000DC076 /* HelpViewController.swift */,
+				32C5A06622B00AB5003595D8 /* SplashViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +139,7 @@
 				32093770222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift */,
 				322924C021B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift */,
 				322924C421B2DBB600F3ECDB /* ColumnFlowLayout.swift */,
+				3278E82022B153EE00299D0A /* PlaygroundHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				3240CAAC217E36E7003F4BDE /* Borken Playgrounds */,
-				3240CAC1217E36E9003F4BDE /* Borken PlaygroundsTests */,
-				3240CACC217E36E9003F4BDE /* Borken PlaygroundsUITests */,
 				3240CAAB217E36E7003F4BDE /* Products */,
 				5A9382CDB5E94142DB4393DF /* Pods */,
 				35698986727F3BA50EC340C3 /* Frameworks */,
@@ -196,8 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */,
-				3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */,
-				3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,15 +165,14 @@
 		3240CAAC217E36E7003F4BDE /* Borken Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				32C5A06422B009A0003595D8 /* GoogleService-Info.plist */,
 				3218BAA52289BF170028EAC8 /* Borken Playgrounds.entitlements */,
-				32F156692235436A0035FA38 /* Settings.bundle */,
 				32F1566B223543820035FA38 /* Helper */,
 				327C98A221BAB84500F19F2C /* fonts */,
 				322924BF21B2CEFC00F3ECDB /* Views */,
 				3220FB3C21B276EE00294B3F /* Controller */,
 				3220FB3921B272BF00294B3F /* Mapbox */,
 				3220FB3621B2722300294B3F /* Models */,
-				32F2B9D921B1A6C6004438DA /* GoogleService-Info.plist */,
 				3240CAAD217E36E7003F4BDE /* AppDelegate.swift */,
 				328C2FA7223AC3C900206376 /* Assets.xcassets */,
 				3240CAB1217E36E7003F4BDE /* Main.storyboard */,
@@ -222,24 +181,6 @@
 				32F156612235305E0035FA38 /* RemoteConfigDefaults.plist */,
 			);
 			path = "Borken Playgrounds";
-			sourceTree = "<group>";
-		};
-		3240CAC1217E36E9003F4BDE /* Borken PlaygroundsTests */ = {
-			isa = PBXGroup;
-			children = (
-				3240CAC2217E36E9003F4BDE /* Borken_PlaygroundsTests.swift */,
-				3240CAC4217E36E9003F4BDE /* Info.plist */,
-			);
-			path = "Borken PlaygroundsTests";
-			sourceTree = "<group>";
-		};
-		3240CACC217E36E9003F4BDE /* Borken PlaygroundsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3240CACD217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift */,
-				3240CACF217E36E9003F4BDE /* Info.plist */,
-			);
-			path = "Borken PlaygroundsUITests";
 			sourceTree = "<group>";
 		};
 		327C98A221BAB84500F19F2C /* fonts */ = {
@@ -253,7 +194,6 @@
 		32F1566B223543820035FA38 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				32F1566C223543910035FA38 /* SettingsBundleHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -303,44 +243,6 @@
 			productReference = 3240CAAA217E36E7003F4BDE /* Borken Playgrounds.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3240CABD217E36E9003F4BDE /* Borken PlaygroundsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3240CAD5217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsTests" */;
-			buildPhases = (
-				1188C41775A07995DC6B72BD /* [CP] Check Pods Manifest.lock */,
-				3240CABA217E36E9003F4BDE /* Sources */,
-				3240CABB217E36E9003F4BDE /* Frameworks */,
-				3240CABC217E36E9003F4BDE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3240CAC0217E36E9003F4BDE /* PBXTargetDependency */,
-			);
-			name = "Borken PlaygroundsTests";
-			productName = "Borken PlaygroundsTests";
-			productReference = 3240CABE217E36E9003F4BDE /* Borken PlaygroundsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3240CAC8217E36E9003F4BDE /* Borken PlaygroundsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3240CAD8217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsUITests" */;
-			buildPhases = (
-				1CA11B2D0E4271F75277C6D1 /* [CP] Check Pods Manifest.lock */,
-				3240CAC5217E36E9003F4BDE /* Sources */,
-				3240CAC6217E36E9003F4BDE /* Frameworks */,
-				3240CAC7217E36E9003F4BDE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3240CACB217E36E9003F4BDE /* PBXTargetDependency */,
-			);
-			name = "Borken PlaygroundsUITests";
-			productName = "Borken PlaygroundsUITests";
-			productReference = 3240CAC9217E36E9003F4BDE /* Borken PlaygroundsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,22 +255,15 @@
 				TargetAttributes = {
 					3240CAA9217E36E7003F4BDE = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
-					};
-					3240CABD217E36E9003F4BDE = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 3240CAA9217E36E7003F4BDE;
-					};
-					3240CAC8217E36E9003F4BDE = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 3240CAA9217E36E7003F4BDE;
 					};
 				};
 			};
@@ -379,6 +274,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 3240CAA1217E36E7003F4BDE;
 			productRefGroup = 3240CAAB217E36E7003F4BDE /* Products */;
@@ -386,8 +282,6 @@
 			projectRoot = "";
 			targets = (
 				3240CAA9217E36E7003F4BDE /* Borken Playgrounds */,
-				3240CABD217E36E9003F4BDE /* Borken PlaygroundsTests */,
-				3240CAC8217E36E9003F4BDE /* Borken PlaygroundsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -399,67 +293,16 @@
 			files = (
 				32F156622235305E0035FA38 /* RemoteConfigDefaults.plist in Resources */,
 				3240CAB8217E36E9003F4BDE /* LaunchScreen.storyboard in Resources */,
-				32F2B9DA21B1A6C6004438DA /* GoogleService-Info.plist in Resources */,
 				327C98A421BAB85800F19F2C /* Kidsn.ttf in Resources */,
 				3240CAB3217E36E7003F4BDE /* Main.storyboard in Resources */,
 				328C2FA8223AC3C900206376 /* Assets.xcassets in Resources */,
-				32F1566A2235436A0035FA38 /* Settings.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3240CABC217E36E9003F4BDE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3240CAC7217E36E9003F4BDE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				32C5A06522B009A0003595D8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1188C41775A07995DC6B72BD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Borken PlaygroundsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1CA11B2D0E4271F75277C6D1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Borken PlaygroundsUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A24D28B0EBE264753491D856 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +329,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Borken Playgrounds/Pods-Borken Playgrounds-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
@@ -508,6 +354,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
@@ -541,16 +390,18 @@
 			files = (
 				3260345A223402ED009D75A4 /* User.swift in Sources */,
 				322924C321B2D2D800F3ECDB /* PlaygroundElement.swift in Sources */,
+				3278E82122B153EE00299D0A /* PlaygroundHeaderView.swift in Sources */,
 				32C787FF223D05A70013961A /* CollaborationController.swift in Sources */,
 				32F1566F223546580035FA38 /* AvatarViewController.swift in Sources */,
 				3240CAB0217E36E7003F4BDE /* ViewController.swift in Sources */,
 				3220FB3B21B272CD00294B3F /* PlaygroundAnnotation.swift in Sources */,
-				32F1566D223543910035FA38 /* SettingsBundleHelper.swift in Sources */,
+				32E6DA5022AC44BD000DC076 /* HelpViewController.swift in Sources */,
 				3240CAAE217E36E7003F4BDE /* AppDelegate.swift in Sources */,
 				3220FB3E21B2795500294B3F /* CustomImageAnnotationView.swift in Sources */,
 				322924C121B2CF0D00F3ECDB /* PlaygroundElementViewCell.swift in Sources */,
 				3220FB3821B2723800294B3F /* Playground.swift in Sources */,
 				322924C521B2DBB600F3ECDB /* ColumnFlowLayout.swift in Sources */,
+				32C5A06722B00AB5003595D8 /* SplashViewController.swift in Sources */,
 				32093771222EFE96002BF2B8 /* SimplePlaygroundElementViewCell.swift in Sources */,
 				322924BE21B2CE1F00F3ECDB /* PlaygroundElementViewController.swift in Sources */,
 				32F15668223542C20035FA38 /* SettingsViewController.swift in Sources */,
@@ -562,42 +413,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3240CABA217E36E9003F4BDE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3240CAC3217E36E9003F4BDE /* Borken_PlaygroundsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3240CAC5217E36E9003F4BDE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3240CACE217E36E9003F4BDE /* Borken_PlaygroundsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3240CAC0217E36E9003F4BDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3240CAA9217E36E7003F4BDE /* Borken Playgrounds */;
-			targetProxy = 3240CABF217E36E9003F4BDE /* PBXContainerItemProxy */;
-		};
-		3240CACB217E36E9003F4BDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3240CAA9217E36E7003F4BDE /* Borken Playgrounds */;
-			targetProxy = 3240CACA217E36E9003F4BDE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3240CAB1217E36E7003F4BDE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3240CAB2217E36E7003F4BDE /* Base */,
+				32C5A06822B00C9F003595D8 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -606,6 +429,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3240CAB7217E36E9003F4BDE /* Base */,
+				32C5A06922B00C9F003595D8 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -678,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -734,6 +560,7 @@
 			baseConfigurationReference = C7FDF52D9E3C25EFFD1233C0 /* Pods-Borken Playgrounds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Borken Playgrounds/Borken Playgrounds.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7P63928R8P;
@@ -746,7 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.borken.playgrounds.borkenplaygrounds.Borken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Distribution;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -756,6 +583,7 @@
 			baseConfigurationReference = 679F066DA2267DEA17145C30 /* Pods-Borken Playgrounds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Borken Playgrounds/Borken Playgrounds.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7P63928R8P;
@@ -768,98 +596,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.borken.playgrounds.borkenplaygrounds.Borken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Distribution;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		3240CAD6217E36E9003F4BDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CEB125F491220E71531E6BC /* Pods-Borken PlaygroundsTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7P63928R8P;
-				INFOPLIST_FILE = "Borken PlaygroundsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Borken Playgrounds.app/Borken Playgrounds";
-			};
-			name = Debug;
-		};
-		3240CAD7217E36E9003F4BDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13DDDE56DB84C99C8C01962A /* Pods-Borken PlaygroundsTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7P63928R8P;
-				INFOPLIST_FILE = "Borken PlaygroundsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Borken Playgrounds.app/Borken Playgrounds";
-			};
-			name = Release;
-		};
-		3240CAD9217E36E9003F4BDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21D8AA363864A25ADF281049 /* Pods-Borken PlaygroundsUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7P63928R8P;
-				INFOPLIST_FILE = "Borken PlaygroundsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Distribution;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Borken Playgrounds";
-			};
-			name = Debug;
-		};
-		3240CADA217E36E9003F4BDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B95B0CDE1820FBB98D881F85 /* Pods-Borken PlaygroundsUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7P63928R8P;
-				INFOPLIST_FILE = "Borken PlaygroundsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.borken.playgrounds.borkenplaygrounds.Borken-PlaygroundsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Distribution;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Borken Playgrounds";
 			};
 			name = Release;
 		};
@@ -880,24 +618,6 @@
 			buildConfigurations = (
 				3240CAD3217E36E9003F4BDE /* Debug */,
 				3240CAD4217E36E9003F4BDE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3240CAD5217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3240CAD6217E36E9003F4BDE /* Debug */,
-				3240CAD7217E36E9003F4BDE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3240CAD8217E36E9003F4BDE /* Build configuration list for PBXNativeTarget "Borken PlaygroundsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3240CAD9217E36E9003F4BDE /* Debug */,
-				3240CADA217E36E9003F4BDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -27,7 +27,8 @@ class CollaborationController: UIViewController {
     override func viewDidLoad() {
         
         jugendwerk.snp.makeConstraints { (make) in
-            make.top.equalTo(self.safeArea.top).offset(navigationBarHeight + UIApplication.shared.statusBarFrame.size.height)
+            
+            make.top.equalTo(self.view.safeArea.top)
             make.width.lessThanOrEqualToSuperview().offset(-60)
             make.height.lessThanOrEqualTo(200)
             make.centerX.equalTo(self.view)
@@ -42,10 +43,26 @@ class CollaborationController: UIViewController {
         }
         
         borken.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.safeArea.bottom).offset(-60)
+            
+            make.bottom.equalTo(self.view.safeArea.bottom).offset(-60)
             make.width.lessThanOrEqualToSuperview().offset(-60)
             make.height.lessThanOrEqualTo(200)
             make.centerX.equalTo(self.view)
         }
+    }
+}
+
+extension UIView {
+    
+    var safeArea: ConstraintBasicAttributesDSL {
+        
+        #if swift(>=3.2)
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.snp
+        }
+        return self.snp
+        #else
+        return self.snp
+        #endif
     }
 }

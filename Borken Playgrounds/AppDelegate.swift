@@ -33,15 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
         
-        Auth.auth().signInAnonymously() { (authResult, error) in
-            self.loadUser()
-            self.fetchRemoteConfig()
-        }
-        
         return true
     }
     
-    private func loadUser() {
+    func loadUser(completion: @escaping ()->()) {
         
         let db = Firestore.firestore()
         if let uuid = UIDevice.current.identifierForVendor?.uuidString {
@@ -51,16 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if (snap.documents.count > 0) {
                         if let firstUserDocument = snap.documents.first {
                             self.user = User(user: firstUserDocument, deviceId: uuid)
+                            completion()
                         }
                     } else {
                         self.user = User(deviceId: uuid)
+                        completion()
                     }
                 }
             })
         }
     }
     
-    private func fetchRemoteConfig() {
+    func fetchRemoteConfig() {
         
         var expirationDuration = 3600
         // If your app is using developer mode, expirationDuration is set to 0, so each fetch will
@@ -113,8 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         
-        SettingsBundleHelper.checkAndExecuteSettings()
-        SettingsBundleHelper.setVersionAndBuildNumber()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

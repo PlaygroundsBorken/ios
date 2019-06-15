@@ -23,8 +23,9 @@ class CustomAvatarAnnotationView: MGLAnnotationView {
         
         self.imageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 60,height: 60))
         let url = URL(string: avatarUrl)
-        self.imageView.round()
-        self.imageView.addCornerRadiusAnimation(to: 10, duration: 0.3)
+        // ToDo Fix
+        //self.imageView.round()
+        //self.imageView.addCornerRadiusAnimation(to: 10, duration: 0.3)
         self.imageView.kf.setImage(with: url)
         self.addSubview(self.imageView)
         self.frame = self.imageView.frame

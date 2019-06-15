@@ -57,30 +57,53 @@ class User {
         
         self.deviceId = deviceId
         
-        if let visitedPlaygroundList = user.get("visitedPlayground") as? [Any] {
+        if let visitedPlaygroundList = user.get("visitedPlaygrounds") as? [Dictionary<String, Bool>] {
             
-            self.visitedPlaygrounds = visitedPlaygroundList.toStringList()
+            var vPlaygrounds = [String]()
+            visitedPlaygroundList.forEach { (body) in
+                body.keys.forEach({ (key) in
+                    vPlaygrounds.append(key)
+                })
+            }
+            self.visitedPlaygrounds = vPlaygrounds
         } else {
             visitedPlaygrounds = []
         }
         
-        if let downVotedPlaygroundsList = user.get("downVotedPlaygrounds") as? [Any] {
-            
-            self.downVotedPlaygrounds = downVotedPlaygroundsList.toStringList()
+        if let downVotedPlaygroundsList = user.get("downVotedPlaygrounds") as? [Dictionary<String, Bool>] {
+            var dPlaygrounds = [String]()
+            downVotedPlaygroundsList.forEach { (body) in
+                body.keys.forEach({ (key) in
+                    dPlaygrounds.append(key)
+                })
+            }
+            self.downVotedPlaygrounds = dPlaygrounds
         } else {
             self.downVotedPlaygrounds = []
         }
         
-        if let upVotedPlaygroundsList = user.get("upVotedPlaygrounds") as? [Any] {
+        if let upVotedPlaygroundsList = user.get("upVotedPlaygrounds") as? [Dictionary<String, Bool>] {
             
-            self.upVotedPlaygrounds = upVotedPlaygroundsList.toStringList()
+            var uPlayground = [String]()
+            upVotedPlaygroundsList.forEach { (body) in
+                body.keys.forEach({ (key) in
+                    uPlayground.append(key)
+                })
+            }
+            self.upVotedPlaygrounds = uPlayground
         } else {
             upVotedPlaygrounds = []
         }
         
-        if let userRemarksList = user.get("userRemarks") as? [Any] {
+        if let userRemarksList = user.get("userRemarks") as? [Dictionary<String, Bool>] {
             
-            self.userRemarks = userRemarksList.toStringList()
+            var remarks = [String]()
+            userRemarksList.forEach { (body) in
+                body.keys.forEach({ (key) in
+                    remarks.append(key)
+                })
+            }
+            self.userRemarks = remarks
         } else {
             userRemarks = []
         }
