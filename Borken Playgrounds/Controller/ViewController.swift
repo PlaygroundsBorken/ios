@@ -35,12 +35,12 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
         
         self.locationManager = CLLocationManager()
         self.locationManager?.delegate = self
-        
+    
+        self.mapboxView.delegate = self
         self.mapboxView.annotations?.forEach({ (annotation) in
             self.mapboxView.removeAnnotation(annotation)
         })
-        self.mapboxView.setCenter(CLLocationCoordinate2D(latitude: 51.843890, longitude: 6.858330), zoomLevel: 11.0, animated: true)
-        self.mapboxView.delegate = self
+        self.mapboxView.setCenter(CLLocationCoordinate2D(latitude: 51.843890, longitude: 6.858330), zoomLevel: 11.0, animated: false)
         
         let db = Firestore.firestore()
         
@@ -55,7 +55,7 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                     })!
                     self.loadedPlaygrounds.append(playground)
                     self.addPlaygroundMarkerToMap(playground: playground)
-                    self.addMeMarker()
+                    self.addMeMarker(moveMeMarker: true)
                 }
             }
         }
@@ -64,18 +64,23 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     
-        let isAllowedLocationWhenInUse = SPPermission.isAllowed(.locationWhenInUse)
+        let defaults = UserDefaults.standard
+        let locationAccess = defaults.bool(forKey: "locationAccess")
         
-        if (!isAllowedLocationWhenInUse) {
-            SPPermission.Dialog.request(with: [.locationWhenInUse], on: self, delegate: self)
-        } else {
-            SPPermission.request(.locationWhenInUse, with: {
-                
-                self.locationManager?.startUpdatingLocation()
-            })
+        if (locationAccess) {
+            let isAllowedLocationWhenInUse = SPPermission.isAllowed(.locationWhenInUse)
+            
+            if (!isAllowedLocationWhenInUse) {
+                SPPermission.Dialog.request(with: [.locationWhenInUse], on: self, delegate: self, dataSource: self)
+            } else {
+                SPPermission.request(.locationWhenInUse, with: {
+                    
+                    self.locationManager?.startUpdatingLocation()
+                })
+            }
         }
         self.filterPlaygroundsOnMap()
-        self.addMeMarker()
+        self.addMeMarker(moveMeMarker: false)
     }
     
     private func filterPlaygroundsOnMap() {
@@ -239,7 +244,7 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
         }
     }
     
-    fileprivate func addMeMarker() {
+    fileprivate func addMeMarker(moveMeMarker: Bool) {
         
         var zoomLevel = 11.0
         if (self.mapboxView.zoomLevel > 11) {
@@ -264,11 +269,12 @@ class MapboxViewController: UIViewController, MGLMapViewDelegate {
                 self.mapboxView.addAnnotation(meMarker)
                 
                 visitPlayground(currentLocation)
-                self.mapboxView.setCenter(currentLocation, zoomLevel: zoomLevel, animated: true)
+                if (moveMeMarker) {
+                    self.mapboxView.setCenter(currentLocation, zoomLevel: zoomLevel, animated: true)
+                }
                 return
             }
         }
-        self.mapboxView.setCenter(CLLocationCoordinate2D(latitude: 51.843890, longitude: 6.858330), zoomLevel: zoomLevel, animated: true)
     }
     
     fileprivate func visitPlayground(_ locValue: CLLocationCoordinate2D) {
@@ -306,7 +312,7 @@ extension UINavigationController {
 extension MapboxViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let _: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        addMeMarker()
+        addMeMarker(moveMeMarker: false)
     }
 }
 
@@ -341,6 +347,69 @@ extension MapboxViewController: CircleMenuDelegate {
 
 extension MapboxViewController: SPPermissionDialogDelegate {
     func didAllow(permission: SPPermissionType) {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: "locationAccess")
         self.locationManager?.startUpdatingLocation()
     }
+    
+    func didDenied(permission: SPPermissionType) {
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: "locationAccess")
+    }
+}
+
+extension MapboxViewController: SPPermissionDialogDataSource {
+    
+    var showCloseButton: Bool {
+        return true
+    }
+    
+    var dialogTitle: String { return "Berechtigung benötigt" }
+    var dialogSubtitle: String { return "Berechtigungen geben" }
+    var dialogComment: String { return "" }
+    var allowTitle: String { return "Erlauben" }
+    var allowedTitle: String { return "Erlaubt" }
+    var bottomComment: String { return "" }
+    
+    func name(for permission: SPPermissionType) -> String? {
+        
+        if (permission == SPPermissionType.locationWhenInUse) {
+            return "Position"
+        }
+        return nil
+        
+    }
+    func description(for permission: SPPermissionType) -> String? {
+        if (permission == SPPermissionType.locationWhenInUse) {
+            return "Erlaube den Zugriff auf die Position, wenn die App im Vordergrund ist."
+        }
+        return nil
+        
+    }
+    func deniedTitle(for permission: SPPermissionType) -> String? {
+        if (permission == SPPermissionType.locationWhenInUse) {
+            return "Zugriff abgelehnt"
+        }
+        return nil
+        
+    }
+    func deniedSubtitle(for permission: SPPermissionType) -> String? {
+        if (permission == SPPermissionType.locationWhenInUse) {
+            return "Zugriff auf den Standort wurde abgelehnt. Damit kann die Position deines Avatars nicht auf der Karte angezeigt werden."
+        }
+        return nil
+        
+    }
+    
+    var cancelTitle: String { return "Schließen" }
+    var settingsTitle: String { return "Einstellungen" }
+}
+
+extension MapboxViewController: SPPermissionDialogColorSource {
+    
+    var iconLightColor: UIColor { return UIColor(named: "primaryColor")! }
+    var iconDarkColor: UIColor { return UIColor(named: "primaryColorDark")! }
+    var iconMediumColor: UIColor { return UIColor(named: "primaryColor")! }
+    var baseColor: UIColor { return UIColor(named: "primaryColor")! }
+    var closeIconColor: UIColor { return UIColor(named: "colorAccent")! }
 }

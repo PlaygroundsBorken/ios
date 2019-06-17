@@ -22,6 +22,28 @@ class PlaygroundElementViewCell: UICollectionViewCell {
         }
     }
     
+    override func didMoveToWindow() {
+        if (self.window != nil) {
+            if self.isSelected
+            {
+                if self.playgroundElementImageView != nil {
+                    self.playgroundElementImageView.layer.cornerRadius = self.playgroundElementImageView.frame.size.width / 2
+                    self.playgroundElementImageView.clipsToBounds = true
+                    self.playgroundElementImageView.layer.borderWidth = 1
+                }
+                
+            }
+            else
+            {
+                if self.playgroundElementImageView != nil {
+                    self.playgroundElementImageView.layer.cornerRadius = self.playgroundElementImageView.frame.size.width / 2
+                    self.playgroundElementImageView.clipsToBounds = true
+                    self.playgroundElementImageView.layer.borderWidth = 0
+                }
+            }
+        }
+    }
+    
     override var isSelected: Bool{
         didSet{
             if self.isSelected

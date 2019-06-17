@@ -22,8 +22,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ic_launcher-web" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-Va-b7h">
                                 <rect key="frame" x="0.0" y="44" width="414" height="320"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bitte hinterlasst unsere Spielplätze in einem guten Zustand, danke!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4C-5E-fOh">
-                                <rect key="frame" x="57" y="376" width="300" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitte hinterlasst unsere Spielplätze in einem guten Zustand, danke!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4C-5E-fOh">
+                                <rect key="frame" x="57" y="390" width="300" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                             <constraint firstItem="F9o-NC-YxK" firstAttribute="top" secondItem="MWD-Va-b7h" secondAttribute="bottom" id="P2N-jG-2Vt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C4C-5E-fOh" secondAttribute="trailing" constant="57" id="SWN-kr-Iuu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="MWD-Va-b7h" secondAttribute="top" id="U9i-hO-q0t"/>
-                            <constraint firstItem="C4C-5E-fOh" firstAttribute="top" secondItem="F9o-NC-YxK" secondAttribute="bottom" constant="10" id="b6o-T9-rJM"/>
+                            <constraint firstItem="C4C-5E-fOh" firstAttribute="top" secondItem="F9o-NC-YxK" secondAttribute="bottom" constant="24" id="b6o-T9-rJM"/>
                             <constraint firstAttribute="trailing" secondItem="MWD-Va-b7h" secondAttribute="trailing" id="bqv-75-agI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F9o-NC-YxK" secondAttribute="bottom" constant="496" id="zu4-io-iuI"/>
                         </constraints>

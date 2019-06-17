@@ -30,7 +30,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate {
     var playgroundElements: [PlaygroundElement] = []
     var selectedPlayground: Playground? = nil
     var defaultButtonColor: UIColor? = nil
-    var referenceHeadSize:CGFloat = 40.0
+    var referenceHeadSize:CGFloat? = nil
     
     let columnLayout = ColumnFlowLayout(
         cellsPerRow: 4,
@@ -282,7 +282,7 @@ class PlaygroundViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width), height: referenceHeadSize)
+        return CGSize(width: (collectionView.frame.size.width), height: referenceHeadSize ?? collectionView.frame.size.height)
     }
     
 }
@@ -322,12 +322,12 @@ extension PlaygroundViewController: UICollectionViewDataSource {
             headerView.playgroundDescription.sizeToFit()
             
             headerView.playgroundDescription.snp.makeConstraints { (make) in
-                make.top.equalTo(headerView.playgroundHeadline.snp.bottom).offset(12)
+                //make.top.equalTo(headerView.playgroundHeadline.snp.bottom).offset(12)
                 
-                let height = headerView.playgroundDescription.bounds.size.height + 40
-                make.height.equalTo(height)
+                let height = headerView.playgroundDescription.bounds.size.height + 12
+                //make.height.equalTo(height)
                 
-                referenceHeadSize = height
+                referenceHeadSize = height + headerView.playgroundHeadline.bounds.size.height
                 
                 playgroundElementsCollectionView.layoutIfNeeded()
             }
@@ -338,7 +338,6 @@ extension PlaygroundViewController: UICollectionViewDataSource {
             fatalError("Unexpected element kind")
         }
     }
-
 }
 
 extension String {

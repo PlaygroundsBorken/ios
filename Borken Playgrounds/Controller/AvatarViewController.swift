@@ -101,7 +101,7 @@ class AvatarViewController: UIViewController {
         switch segue.destination {
             
         case let formViewController as FormViewController:
-            let rows = appDelegate.avatars?.avatarSetting.prefix(showAmountOfWrapper).map({ (avatarSetting) -> ActionSheetRow<String> in
+            let rows = appDelegate.avatars?.avatarSetting.prefix(showAmountOfWrapper).map({ (avatarSetting) -> PushRow<String> in
                 var selected: String = ""
                 if let selectedOption = avatarSetting.options.first(where: { (part) -> Bool in
                     return part.selected != nil && part.selected!
@@ -112,7 +112,7 @@ class AvatarViewController: UIViewController {
                 }
                 
                 
-                return ActionSheetRow<String>() {
+                return PushRow<String>() {
                     $0.title = String(describing: optionsHeadlines[avatarSetting.body_part]!)
                     $0.selectorTitle = "Wähle \(String(describing: optionsHeadlines[avatarSetting.body_part]!)) aus"
                     $0.options = avatarSetting.options.map({ (part) -> String in
